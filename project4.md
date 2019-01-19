@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Final Project 
-permalink: /2018/proj/p4/
+permalink: /2019/proj/p4/
 ---
 
 Table of Contents:
