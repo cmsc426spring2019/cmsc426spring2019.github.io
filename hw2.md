@@ -2,7 +2,7 @@
 layout: page
 mathjax: true
 title: Image Features and Warping 
-permalink: /2018/hw/hw2/
+permalink: /2019/hw/hw2/
 ---
 
 Table of Contents:
