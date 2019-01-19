@@ -15,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-10:59AM, Tuesday, October 2nd, 2018
+10:59AM, Tuesday, February 19, 2019
 
 <a name='intro'></a>
 ## Introduction
@@ -106,4 +106,4 @@ As usual, your report must be full English sentences,**not** commented code.
 
 <a name='coll'></a>
 ## Collaboration Policy
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2018 website
+You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Spring 2019 website
