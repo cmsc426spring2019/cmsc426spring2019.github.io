@@ -26,7 +26,7 @@ Now, for the sake of easy discussion and without loss of any generality let us a
 
 Simply, I assumed that the three axes (basis) are perpendicular or orthogonal to each other. One may ask why we need this condition? This is to have the minimal amount of numbers to represent any data in the space and to  have a unique combination of these axes (basis) to represent a point. Also, the axes are represented by unit vectors for representing direction only (more about this later). Now any point in the space represents a vector from the origin \\([0,0,0]^T\\) to itself, i.e., the tail of the vector is at the origin and the head of the vector is at the point. Note that the vector is a column vector. This is the general mathematical representation of a vector. Otherwise unless stated, vectors are assumed to be column vectors. 
 
-Now let us assume that the space is Cartesian. One might  wonder what other spaces exist? Think of [cylindrical coordinates](http://mathworld.wolfram.com/CylindricalCoordinates.html) or [spherical coordinates](http://mathworld.wolfram.com/SphericalCoordinates.html) which are used in panorama stiching on your phone for Virtual Reality. Let us assume that we have three points in this space denoted as \\(A, B, C\\). The vector from the origin to either \\(A\\) or \\(B\\) or \\(C\\) is denoted by their respective coordinates. Now a vector between two points \\(A, B\\) is represented as \\(\vec{AB}\\) and is given by \\(\vec{AB} = B - A\\). 
+Now let us assume that the space is Cartesian. One might  wonder what other spaces exist? Think of [cylindrical coordinates](http://mathworld.wolfram.com/CylindricalCoordinates.html) or [spherical coordinates](http://mathworld.wolfram.com/SphericalCoordinates.html) which are used in panorama stitching on your phone for Virtual Reality. Let us assume that we have three points in this space denoted as \\(A, B, C\\). The vector from the origin to either \\(A\\) or \\(B\\) or \\(C\\) is denoted by their respective coordinates. Now a vector between two points \\(A, B\\) is represented as \\(\vec{AB}\\) and is given by \\(\vec{AB} = B - A\\). 
 
 The dot product between two vectors \\( \vec{AB}, \vec{BC} \\) is defined as \\( \vec{AB}\cdot \vec{BC} = \vert \vert \vec{AB} \vert \vert \vert \vert \vec{BC} \vert \vert \cos \theta\\). Here, \\(\vert \vert \vec{AB} \vert \\) represents norm of the vector \\(\vec{AB}\\) and is given by \\( \sqrt{AB_x^2 + AB_y^2 + AB_z^2}\\), where \\(\vec{AB} = [AB_x, AB_y, AB_z]^T\\). \\( \theta \\) is the angle between the two vectors. Note that the dot product is a scalar value. The dot product represents the projection of one vector onto another vector. This is generally used to measure similarity of vectors in Computer Vision, such as for example in processing 3D data from multiple cameras or from a [Kinect sensor](https://en.wikipedia.org/wiki/Kinect). Note that the dot product is commutative (\\(\mathbf{a}\cdot \mathbf{b} = \mathbf{b}\cdot \mathbf{a}\\)) and **not** associative because the dot product between a scalar (\\(a \cdot b\\)) and a vector (\\(c\\)) is not defined.  \\((a \cdot b) \cdot c\\) or \\(a \cdot (b \cdot c\\)) are both ill-defined. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
 
@@ -108,7 +108,7 @@ $$
 
 The above is called **Eigen-decomposition** in literature. Eigen-decomposition is very commonly used in an algorithm called [**Principle Component Analysis (PCA)**](https://en.wikipedia.org/wiki/Principal_component_analysis). PCA is used to find the most important linearly independent basis of a given data. 
 
-You might be wondering what the inuition to Eigen-decomposition is. The eigenvalues represent the covariance and eigenvectors represent the linearly independent directions of variation in data. A sample eigenvectors and eigenvalues are shown below:
+You might be wondering what the intuition to Eigen-decomposition is. The eigenvalues represent the covariance and eigenvectors represent the linearly independent directions of variation in data. Sample eigenvectors and eigenvalues are shown below:
 
 
 <div class="fig figcenter fighighlight">
@@ -116,7 +116,7 @@ You might be wondering what the inuition to Eigen-decomposition is. The eigenval
   <div class="figcaption">Eigenvectors of a covariance matrix of data shown in blue. Data is drawn from a gaussian distribution.</div>
 </div>
 
-For a detailed explanation of the visualization look at [this link](http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/). In computer vision, eigenspaces have been used for ages. Consider the problem of face recognition. Here we have a dataset of a lot of faces and we need to identify the person given a photo of the face. This is similar to what TSA does when they check your ID at the airport, they are manually trying to see if the photo in the ID looks like the person in front of them. One of the ealiest face recognition methods used eigenspaces and the algorithm is aptly called **Eigenfaces**. The idea of the algorithm is to represent any face as a linear combination of **eigenfaces**. These **eigenfaces** are supposed to represent the most common features of a face and that any face can be reconstructed as their linear combination. This means that each face is represented as a vector of weights which multiply these eigenfaces and are added up to make the original face. Think of this as representing each face as an encoded vector. This idea is also used extensively in compression. During the face identification, the test face is also converted to a vector and the label (person ID) of closest vector in the training set (database of face images on the computer) is chosen as the predicted label (person ID). A visual representation of this is shown below. For more details look at [this link](http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf).
+For a detailed explanation of the visualization look at [this link](http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/). In computer vision, eigenspaces have been used for ages. Consider the problem of face recognition. Here we have a dataset of a lot of faces and we need to identify the person given a photo of the face. This is similar to what TSA does when they check your ID at the airport, they are manually trying to see if the photo in the ID looks like the person in front of them. One of the earliest face recognition methods used eigenspaces and the algorithm is aptly called **Eigenfaces**. The idea of the algorithm is to represent any face as a linear combination of **eigenfaces**. These **eigenfaces** are supposed to represent the most common features of a face and that any face can be reconstructed as their linear combination. This means that each face is represented as a vector of weights which multiply these eigenfaces and are added up to make the original face. Think of this as representing each face as an encoded vector. This idea is also used extensively in compression. During the face identification, the test face is also converted to a vector and the label (person ID) of closest vector in the training set (database of face images on the computer) is chosen as the predicted label (person ID). A visual representation of this is shown below. For more details look at [this link](http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf).
 
 
 <div class="fig figcenter fighighlight">
@@ -159,7 +159,7 @@ Let us define the problem in hand first. Assume that we have \\(N\\) points in \
   <div class="figcaption">Left: Input image to a self driving car for lane detection. Right: Pixel candidates where one would fit a line to find the lane, notice that there are multiple lines possible, for the purposes of the example assume that we want to fit a line to the pixels inside the red ellipse.</div>
 </div>
 
-Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that, the best-fit line generally would not pass thorugh any of the points. You might be wondering how is that the best line then? Well it depends on how we are going to define best-fit and that the points are **noisy**. Let us define best-fit right now.
+Let us model the problem mathematically, we have \\(N\\) points in \\(\mathbb{R}^2\\) to which we want to fit the **best-fit** line. The best-line has to be defined before we proceed. One could argue that I can pick any random two points and fit a line and call that the best-fit. However, this solution is the best for those two points and not for all points. If all the points lie on a line one could say that we have an **exact** and **unique** solution, but this rarely happens. The more common version of this problem is that the best-fit line generally would not pass through any of the points. You might be wondering why then is it the best line? Well, it depends on how we are going to define best-fit, and that the points are **noisy**. Let us define best-fit right now.
 
 Let the equation of the line be \\(ax+by+c=0\\) where we want to find the parameters \\(\Theta=\begin{bmatrix} a & b & c \end{bmatrix}^T\\) such that:
 
@@ -240,7 +240,7 @@ $$
 \ker(L) = \text{null}(L) = \left\{\mathbf {v} \in V \vert L(\mathbf {v} )=\mathbf {0} \right\}
 $$
 
-To understand how this will help in solving \\(A\mathbf{x}=0\\), we need to understand the concept of **rank of a matrix** first. The rank of a matrix \\(A\\) is defined as the number of linearly independent columns of \\(A\\), this is mathematically defined as the dimension of the vector space spanned by the columns of \\(A\\). The easiest way to find the rank of a matrix is to take the Eigen-decomposition (for square matrices) or the SVD (for any shaped matrix). The number of non-zero eigenvalues or the number of non-zero singularvalues gives the rank of a matrix. The rank can be atmost the smallest dimension of the matrix \\(A\\), i.e., if \\(A \in \mathbb{R}^{m \times n}\\) and \\(n < m \\) , then \\(\text{rank}(A)\le n\\). Now that we know what rank means, we can state the **Rank-nullity** theorem as follows:
+To understand how this will help in solving \\(A\mathbf{x}=0\\), we need to understand the concept of **rank of a matrix** first. The rank of a matrix \\(A\\) is defined as the number of linearly independent columns of \\(A\\), this is mathematically defined as the dimension of the vector space spanned by the columns of \\(A\\). The easiest way to find the rank of a matrix is to take the Eigen-decomposition (for square matrices) or the SVD (for any shaped matrix). The number of non-zero eigenvalues or the number of non-zero singular values gives the rank of a matrix. The rank can be at most the smallest dimension of the matrix \\(A\\), i.e., if \\(A \in \mathbb{R}^{m \times n}\\) and \\(n < m \\) , then \\(\text{rank}(A)\le n\\). Now that we know what rank means, we can state the **Rank-nullity** theorem as follows:
 
 $$
 \text{rank}(A) + \text{nullity}(A) = n
@@ -343,7 +343,7 @@ $$
 \hat{\beta} = \left( \mathbf{X}^T \mathbf{X} + \lambda I \right)^{-1} \mathbf{X}^T\mathbf{y}
 $$
 
-Here, \\(I\\) is the identity matrix. The reason why Ridge regression can handle noise better than linear regression is because it improves the condition number of \\( \mathbf{X}^T \mathbf{X} \\). The new condition number becomes \\( \frac{\sigma_{max}^2 + \lambda}{\sigma_{min}^2 + \lambda}\\). This value is lower than the original conition number we had which means that the solution is less sensitive to noise. This is similar to adding prior information to the optimization problem which acts as a noise removal filter. In Bayesian terms, this is finding the Maximum a-posteriori (MAP) estimate for gaussian noise assumption. 
+Here, \\(I\\) is the identity matrix. The reason why Ridge regression can handle noise better than linear regression is that it improves the condition number of \\( \mathbf{X}^T \mathbf{X} \\). The new condition number becomes \\( \frac{\sigma_{max}^2 + \lambda}{\sigma_{min}^2 + \lambda}\\). This value is lower than the original condition number we had which means that the solution is less sensitive to noise. This is similar to adding prior information to the optimization problem which acts as a noise removal filter. In Bayesian terms, this is finding the Maximum a-posteriori (MAP) estimate for the Gaussian noise assumption. 
 
 <a name='ransac'></a>
 ## Random Sample Consensus (RANSAC) for outlier rejection
@@ -376,7 +376,7 @@ RANSAC algorithm is very simple and can be implemented in less than 40 lines in 
 
 **Step 3:** Compute the set of inliers to this model from whole data set (inliers are defined as those points whose distance to the fitted line are less than some user chosen threshold).
 
-Repeat Steps 1-3 until model with the most inliers over all samples is found (or for some set number of iterations or until a inlier set is a certain percentage of the data, like 90%).
+Repeat Steps 1-3 until model with the most inliers over all samples is found (or for some set number of iterations or until an inlier set is a certain percentage of the data, like 90%).
 
 
 <div class="fig figcenter fighighlight">
@@ -392,7 +392,7 @@ Repeat Steps 1-3 until model with the most inliers over all samples is found (or
   <div class="figcaption">Repeat steps 1-3.  Here we have 12 inliers. These awesome figures are adapted from Prof. Silvo Savarese's slides.</div>  
 </div>
 
-The number of iterations \\(N\\) needed to have a probability \\(p\\) of success with 2 points being chosen at every iteration to fit a line and at a outlier ratio \\(e\\) chosen at each step is given by
+The number of iterations \\(N\\) needed to have a probability \\(p\\) of success with 2 points being chosen at every iteration to fit a line and at an outlier ratio \\(e\\) chosen at each step is given by
 
 $$
 N = \frac{\log\left(1-p\right)}{\log\left(1-\left( 1 - e\right)^2 \right)}
@@ -400,4 +400,4 @@ $$
 
 To put this in perspective, we **only need 17 iterations to be 95% sure that we'll find a good solution even with 50% outliers.** 
 
-Another voting scheme which works well for fitting curves with lesser number of parameters is the [Hough Transform](https://en.wikipedia.org/wiki/Hough_transform). This is left as a self-reading article. 
+Another voting scheme which works well for fitting curves with a smaller number of parameters is the [Hough Transform](https://en.wikipedia.org/wiki/Hough_transform). This is left as a self-reading article. 
