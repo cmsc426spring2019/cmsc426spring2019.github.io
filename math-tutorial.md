@@ -4,7 +4,8 @@ title: Math Tutorial
 permalink: /math-tutorial/
 ---
 **This article is written by [Nitin J. Sanket](http://nitinjsanket.github.io).**
-update by Cornelia Fermuller (1/21/2019)
+
+update by Cornelia Ferm&uuml;ller (1/21/2019)
 
 The Table of Contents:
 
