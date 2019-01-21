@@ -28,7 +28,7 @@ Simply, I assumed that the three axes (basis) are perpendicular or orthogonal to
 
 Now let us assume that the space is Cartesian. One might  wonder what other spaces exist? Think of [cylindrical coordinates](http://mathworld.wolfram.com/CylindricalCoordinates.html) or [spherical coordinates](http://mathworld.wolfram.com/SphericalCoordinates.html) which are used in panorama stitching on your phone for Virtual Reality. Let us assume that we have three points in this space denoted as \\(A, B, C\\). The vector from the origin to either \\(A\\) or \\(B\\) or \\(C\\) is denoted by their respective coordinates. Now a vector between two points \\(A, B\\) is represented as \\(\vec{AB}\\) and is given by \\(\vec{AB} = B - A\\). 
 
-The dot product between two vectors \\( \vec{AB}, \vec{BC} \\) is defined as \\( \vec{AB}\cdot \vec{BC} = \vert \vert \vec{AB} \vert \vert \vert \vert \vec{BC} \vert \vert \cos \theta\\). Here, \\(\vert \vert \vec{AB} \vert \\)\vert represents norm of the vector \\(\vec{AB}\\) and is given by \\( \sqrt{AB_x^2 + AB_y^2 + AB_z^2}\\), where \\(\vec{AB} = [AB_x, AB_y, AB_z]^T\\). \\( \theta \\) is the angle between the two vectors. Note that the dot product is a scalar value. The dot product represents the projection of one vector onto another vector. This is generally used to measure similarity of vectors in Computer Vision, such as for example in processing 3D data from multiple cameras or from a [Kinect sensor](https://en.wikipedia.org/wiki/Kinect). Note that the dot product is commutative (\\(\mathbf{a}\cdot \mathbf{b} = \mathbf{b}\cdot \mathbf{a}\\)) and **not** associative because the dot product between a scalar (\\(a \cdot b\\)) and a vector (\\(c\\)) is not defined.  \\((a \cdot b) \cdot c\\) or \\(a \cdot (b \cdot c\\)) are both ill-defined. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
+The dot product between two vectors \\( \vec{AB}, \vec{BC} \\) is defined as \\( \vec{AB}\cdot \vec{BC} = \vert \vert \vec{AB} \vert \vert \vert \vert \vec{BC} \vert \vert \cos \theta\\). Here, \\(\vert \vert \vec{AB} \vert \\)\vert represents norm of the vector \\(\vec{AB}\\) and is given as \\( \sqrt{AB_x^2 + AB_y^2 + AB_z^2}\\), where \\(\vec{AB} = [AB_x, AB_y, AB_z]^T\\). \\( \theta \\) is the angle between the two vectors. Note that the dot product is a scalar value. The dot product represents the projection of one vector onto another vector. This is generally used to measure similarity of vectors in Computer Vision, such as for example in processing 3D data from multiple cameras or from a [Kinect sensor](https://en.wikipedia.org/wiki/Kinect). Note that the dot product is commutative (\\(\mathbf{a}\cdot \mathbf{b} = \mathbf{b}\cdot \mathbf{a}\\)) and **not** associative because the dot product between a scalar (\\(a \cdot b\\)) and a vector (\\(c\\)) is not defined.  \\((a \cdot b) \cdot c\\) or \\(a \cdot (b \cdot c\\)) are both ill-defined. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
 
 
 <div class="fig figleft fighighlight">
@@ -63,10 +63,13 @@ An animation of the cross product is shown below:
   <div style="clear:both;"></div>
 </div>
 
-The cross product is used to find the normal vector to a plane in Computer Vision. This is especially useful in aligning 3D point clouds (images with depth information). This method is extensively used in self driving cars to make a map using LIDAR scans. If you are curious, have a look at [Point to Plane Iterative Closest Point algorithm](https://www-new.comp.nus.edu.sg/~lowkl/publications/lowk_point-to-plane_icp_techrep.pdf) to understand how this works.  Note that the cross prodct is  anticommutative (\\(\mathbf{a}\times \mathbf{b} = -\mathbf{b}\times\mathbf{a}\\)) and **not** associative. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
+The cross product is used to find the normal vector to a plane in Computer Vision. This is especially useful in aligning 3D point clouds (images with depth information). This method is extensively used in self driving cars to make a map using LIDAR scans. If you are curious, have a look at the [Point to Plane Iterative Closest Point algorithm](https://www-new.comp.nus.edu.sg/~lowkl/publications/lowk_point-to-plane_icp_techrep.pdf) to understand how this works.  Note that the cross prodct is  anticommutative (\\(\mathbf{a}\times \mathbf{b} = -\mathbf{b}\times\mathbf{a}\\)) and **not** associative. Other properties can be found [here](https://en.wikipedia.org/wiki/Dot_product).
 
 <a name='eigen'></a>
 ## Eigenvalues and Eigenvectors
+In the following we consider transformations with square matrices (i.e. the matrix \\( A \in \mathbb{R}^{n \times n}\\)), and which are
+diagonizable, such as the symmetric matrices of the covariance of data.
+
 Let us say we have a vector \\(\mathbf{v}\\) in \\( \mathbb{R}^n\\). A linear transformation of \\(\mathbf{v}\\) is given by a matrix \\(A\\) multiplied by \\(\mathbf{v}\\). One could have a special vector \\(\mathbf{v}\\) such that the function \\(A \mathbf{v}\\) returns a scaled version of \\(\mathbf{v}\\), i.e., the direction of the \\( \mathbf{v}\\) is maintained upon a linear transformation by \\(A\\). This can mathematically be written as:
 
 $$
@@ -81,7 +84,7 @@ $$
 \left(A - \lambda I \right)\mathbf{v} =  0
 $$
 
-Here \\( I\\) is an identity matrix of size \\( n \times n\\) and has all the diagonal elements as 1 and non-diagonal elements as 0. Once the above equation is solved, one would find \\(n\\) pairs of \\(\lambda_i\\) and \\(\mathbf{v}_i\\) such that the above equation is satisfied (\\(i\\) varies from 1 to \\(N\\)). These set of \\(\lambda_i\\) values are called **eigenvalues** and these set of \\(\mathbf{v}_i\\) vectors are called **eigenvectors**. Note that the eigenvectors are linearly independent, i.e., dot product between any of them is zero. However, eigenvalues need not be distinct. If we have a matrix \\(Q\\) whose columns are made up of the eigenvectors, i.e., 
+Here \\( I\\) is an identity matrix of size \\( n \times n\\) and has all the diagonal elements as 1 and non-diagonal elements as 0. Once the above equation is solved, one would find \\(n\\) pairs of \\(\lambda_i\\) and \\(\mathbf{v}_i\\) such that the above equation is satisfied (\\(i\\) varies from 1 to \\(N\\)). These set of \\(\lambda_i\\) values are called **eigenvalues** and these set of \\(\mathbf{v}_i\\) vectors are called **eigenvectors**. Note that the eigenvectors are linearly independent, i.e., the dot product between any of them is zero. However, the eigenvalues need not be distinct if we have a matrix \\(Q\\) whose columns are made up of the eigenvectors, i.e., 
 
 $$
 Q = \begin{bmatrix} \mathbf{v_1} & \mathbf{v_2} & \cdots & \mathbf{v_n} \end{bmatrix}
@@ -99,14 +102,14 @@ $$
 AQ = \begin{bmatrix} \mathbf{v_1} & \mathbf{v_2} & \cdots & \mathbf{v_n} \end{bmatrix} \Lambda
 $$ 
 
-Here \\(\Lambda\\) is a diagonal matrix with \\(\Lambda_{ii} = \lambda_i\\). We also know that columns of \\(Q\\) are linearly independent, this means that 
+Here \\(\Lambda\\) is a diagonal matrix with \\(\Lambda_{ii} = \lambda_i\\). We also know that the columns of \\(Q\\) are linearly independent, and this means that 
 \\(Q\\) is invertible. 
 
 $$
 A = Q\Lambda Q^{-1}
 $$
 
-The above is called **Eigen-decomposition** in literature. Eigen-decomposition is very commonly used in an algorithm called [**Principle Component Analysis (PCA)**](https://en.wikipedia.org/wiki/Principal_component_analysis). PCA is used to find the most important linearly independent basis of a given data. 
+The above is called **Eigen-decomposition** in the literature. Eigen-decomposition is very commonly used in an algorithm called [**Principle Component Analysis (PCA)**](https://en.wikipedia.org/wiki/Principal_component_analysis). PCA is used to find the most important linearly independent basis of a given data. 
 
 You might be wondering what the intuition to Eigen-decomposition is. The eigenvalues represent the covariance and eigenvectors represent the linearly independent directions of variation in data. Sample eigenvectors and eigenvalues are shown below:
 
