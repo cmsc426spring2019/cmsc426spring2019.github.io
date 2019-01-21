@@ -3,9 +3,9 @@ layout: page
 title: Math Tutorial
 permalink: /math-tutorial/
 ---
-**This article is written by [Nitin J. Sanket](http://nitinjsanket.github.io).**
+**This article is written by [Nitin J. Sanket](http://nitinjsanket.github.io).** 
 
-update by Cornelia Ferm&uuml;ller (1/21/2019)
+updated by Cornelia Ferm&uuml;ller (1/21/2019)
 
 The Table of Contents:
 
@@ -20,11 +20,11 @@ The Table of Contents:
 
 <a name='hilbert'></a>
 ## Hilbert Space, Vectors, Dot and Cross Products
-In the simplest sense, the Eucledian space we consider in everyday life is mathematically called the Hilbert Space. The co-ordinates of the Hilbert space can represent anything from physical metric co-ordinates (most general sense) to something like cost of goods, volume of goods and so on. Any general metric graph is a Hilbert Space. An \\(n\\) dimensional Hilbert space is said to like in \\(\mathbb{R}^n\\) which indicates that all the numbers represented in this space are real. Note that Cartesian space is different from Hilbert space and is a sub-set of it. Mathematically, a Hilbert space is an abstract vector space which preserves the structure of an inner product. In non-math terms, it just means that one can measure length and angle in this space. 
+In the simplest sense, the Euclidean space we consider in everyday life is mathematically called the Hilbert Space. The co-ordinates of the Hilbert space can represent anything from physical metric coordinates (most general sense) to something like the cost of goods, the volume of goods and so on. Any general metric graph is a Hilbert Space. An \\(n\\) dimensional Hilbert space is said to live in \\(\mathbb{R}^n\\) which indicates that all the numbers represented in this space are real. Note that Cartesian space is different from Hilbert space and is a sub-set of it. Mathematically, a Hilbert space is an abstract vector space which preserves the structure of an inner product. In non-math terms, it just means that one can measure length and angle in this space. 
 
-Now, for the sake of easy discussion and without loss of any generality let us assume that our Hilbert Space is in \\(\mathbb{R}^3\\). Think of this as our \\(X-Y-Z\\) co-ordinate space. Any point in space \\(p\\) is represented as a triplet \\([x,y,z]^T\\), i.e., having 3 values (one for x-coordinate, one for y-coordinate and one for z-coordinate). I made an implicit assumption when I said that we have \\(X-Y-Z\\) coordinate space. Can you think of what it is?
+Now, for the sake of easy discussion and without loss of any generality let us assume that our Hilbert Space is in \\(\mathbb{R}^3\\). Think of this as our \\(X-Y-Z\\) coordinate space. Any point in space \\(p\\) is represented as a triplet \\([x,y,z]^T\\), i.e., having 3 values (one for the x-coordinate, one for the y-coordinate and one for the z-coordinate). I made an implicit assumption when I said that we have an \\(X-Y-Z\\) coordinate space. Can you think of what it is?
 
-Simple, I assumed that the three axes (basis) are perpendicular or orthogonal to each other. One may ask why we need this condition? This is to have the minimal set of numbers to represent any data in the space and that one would only have a unique conbination of these axes (basis) to represent any point. Also, the axes are represented by unit vectors for representing direction only (more about this later). Now any point in the space represents a vector from origin \\([0,0,0]^T\\) to itself, i.e., the tail of the vector is at the origin and the head of the vector is at the point. Note that the vector is a column vector, this is the general mathematical representation of a vector. Otherwise unless stated vectors are assumed to be column vectors. 
+Simple, I assumed that the three axes (basis) are perpendicular or orthogonal to each other. One may ask why we need this condition? This is to have the minimal amount of numbers to represent any data in the space and that one would  have a unique combination of these axes (basis) to represent a point. Also, the axes are represented by unit vectors for representing direction only (more about this later). Now any point in the space represents a vector from the origin \\([0,0,0]^T\\) to itself, i.e., the tail of the vector is at the origin and the head of the vector is at the point. Note that the vector is a column vector. This is the general mathematical representation of a vector. Otherwise unless stated, vectors are assumed to be column vectors. 
 
 Now let us assume that the space is Cartesian. One might be wondering what other spaces exist? Think of [cylindrical coordinates](http://mathworld.wolfram.com/CylindricalCoordinates.html) or [spherical coordinates](http://mathworld.wolfram.com/SphericalCoordinates.html) which are used in panorama stiching on your phone for Virtual Reality. Let us assume that we have 3 points in this space denoted by \\(A, B, C\\). The vector from origin to either \\(A\\) or \\(B\\) or \\(C\\) is denoted by their repsective coordinates. Now a vector between 2 points \\(A, B\\) is represented as \\(\vec{AB}\\) and is given by \\(\vec{AB} = B - A\\). 
 
