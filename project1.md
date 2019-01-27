@@ -44,8 +44,8 @@ To make logistics easier, we have collected camera data from Nao robot on behalf
 <a name='pro'></a>
 ### Problem Statement 
 
-1. Write MATLAB code to cluster the orange ball using [Single Gaussian](https://cmsc426.github.io/colorseg/#gaussian) [30 points] 
-2. Write MATLAB code to cluster the orange ball using [Gaussian Mixture Model](https://cmsc426.github.io/colorseg/#gmm) [40 points] and estimate the [distance](https://cmsc426.github.io/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points]. 
+1. Write MATLAB code to cluster the orange ball using [Single Gaussian](https://cmsc426spring2019.github.io/colorseg/#gaussian) [30 points] 
+2. Write MATLAB code to cluster the orange ball using [Gaussian Mixture Model](https://cmsc426spring2019.github.io/colorseg/#gmm) [40 points] and estimate the [distance](https://cmsc426spring2019.github.io/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points]. 
 
 You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()` or `gmdistribution.fit()` for GMM. To help you with code implementation, we have given the pseudocode :-) 
 

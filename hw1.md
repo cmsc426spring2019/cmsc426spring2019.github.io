@@ -21,7 +21,7 @@ Table of Contents:
 <a name='intro'></a>
 ## Introduction
 
-This home work is designed to test your understanding of mathematics tutorial discussed in this [link](https://cmsc426.github.io/math-tutorial/). The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:
+This home work is designed to test your understanding of mathematics tutorial discussed in this [link](https://cmsc426spring2019.github.io/math-tutorial/). The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:
 
 - Line fitting using Linear Least Squares
 - Outliers rejection using Regularization

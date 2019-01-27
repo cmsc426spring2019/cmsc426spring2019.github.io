@@ -1,8 +1,8 @@
 ---
 layout: page
 mathjax: true
-title: Optical Flow and Tracking
-permalink: /2019/hw/hw2/
+title: SVMs
+permalink: /2019/hw/hw3/
 ---
 
 ## UNDER CONSTRUCTION.
@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-10:59AM, Tuesday, February 19, 2019
+TBA
 
 <a name='intro'></a>
 ## Introduction
