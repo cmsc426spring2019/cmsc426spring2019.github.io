@@ -74,6 +74,8 @@ For this project, imfilter, conv2, imrotate, im2double, rgb2gray, fspecial, imtr
 
 <b> We will deduct points if your submission does not comply with the following guidelines.</b>
 
+Please submit the project <b> once </b> for your group -- there's no need for each member to submit it.
+
 ### File tree and naming
 
 Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj2.zip**.  For example, xyz123_proj2.zip.  The file **must have the following directory structure**: 
@@ -96,6 +98,10 @@ the resulting panorama.
 **You will be graded primarily based on your report.**  We want
 you to demonstrate an understanding of the concepts involved in the project, and to show the output
 produced by your code.
+
+Logistics and bookkeeping you **must** include at the top of your report (-5 points for each one that's missing):
+ - The name of each group member. - A brief (one paragraph or less) description of what each group member contributed to the project.
+
 
 Include visualizations of the output of each stage in your pipeline (as shown in the system diagram
 on page 2), and a description of what you did for each step.  Assume that we're familiar with the

@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline 
-10:59AM, Tuesday, September 18, 2018
+10:59AM, Tuesday, Feb 19, 2019 
 
 <a name='intro'></a>
 ## Introduction
@@ -60,7 +60,10 @@ You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()
 <a name='sub'></a>
 ## Submission Guidelines
 
-<b> If your submission does not comply with the following guidelines, you'll be given ZERO credit </b>
+<b> We will deduct points if your submission does not comply with the following guidelines.</b>
+
+Please submit the project <b> once </b> for your group -- there's no need for each member to submit
+it.
 
 ### File tree and naming
 
@@ -78,12 +81,18 @@ YourDirectoryID_proj1.zip.
  - report.pdf
 
 ### Report
+Logistics and bookkeeping you **must** include at the top of your report (-5 points for each one that's missing):
+
+ - The name of each group member.
+ - A brief (one paragraph or less) description of what each group member contributed to the project.
+
+
 For each section of the project, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:
 
-- Your choice of color space, initialization method and number of gaussians in the GMM
-- Explain why GMM is better than single gaussian 
-- Present your distance estimate and cluster segmentation results for each test image
-- Explain strengths and limitations of your algorithm. Also, explain why the algorithm failed on some test images
+- Your choice of color space, initialization method and number of gaussians in the GMM.
+- Explain why GMM is better than a single gaussian.
+- Present your distance estimate and cluster segmentation results for each test image.
+- Explain strengths and limitations of your algorithm. Also, explain why the algorithm failed on some test images.
 
 As usual, your report must be full English sentences, **not** commented code. There is a word limit of 1500 words and no minimum length requirement
 
