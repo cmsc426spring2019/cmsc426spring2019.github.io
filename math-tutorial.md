@@ -253,7 +253,7 @@ $$
 
 Let us find the nullspace using SVD. Let the SVD of \\(A = U\Sigma V^T\\). Now, \\(\Sigma\\) is ideally supposed to be of rank 3 (as we know that we have 3 unknowns). This means that the 4:N rows of \\(\Sigma\\) have to be all zeros. But due to noise, the rank will be more than 3. A good solution to the optimization problem is obtained when we set any of the columns of \\(V^T\\) corresponding to nullspace to zero (4:N rows of \\(\Sigma\\)). The singular values are sorted in descending order and hence a minimum deviation from the ideal line would give us the best-fit solution. This is the solution corresponding to the smallest singular-value. 
 
-**The best-fit solution is therefore given by the last column of \\(V\\) (last row of \\(V^T\\)**. 
+**The best-fit solution is therefore given by the last column of \\(V\\) (last row of \\(V^T\\) )**. 
 
 Note that, a simple assumption made about the noise in the previous line fitting example is that, the noise is white gaussian with a mean of zero and some standard deviation. Inuitively, it means that the probability of data points away from the line is decreases as the distance between the point and the line increases. Mathematically the noise is derived from the following distribution (Co-variance is denoted as \\(\Sigma\\)):
 
