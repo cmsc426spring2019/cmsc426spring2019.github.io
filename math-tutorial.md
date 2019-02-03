@@ -321,7 +321,7 @@ $$
 $$
 
 
-Here \\(\sigma_{max}\\) and \\(\sigma_{min}\\) refers to the maximum and minimum singular values respectively. Similarly,  \\(\lambda_{max}\\) and \\(\lambda_{min}\\) refers to the maximum and minimum eigenvalues respectively. If the noiseless version of the problem is \\(\mathbf{\hat{x}} = A^\dagger \mathbf{\hat{b}}\\) and the noisy version is \\(\mathbf{x} = A^\dagger \mathbf{b}\\), the relation between the estimates and condition number is given below:
+\(\kappa\) is known as the *condition number*.  Here \\(\sigma_{max}\\) and \\(\sigma_{min}\\) refers to the maximum and minimum singular values respectively. Similarly,  \\(\lambda_{max}\\) and \\(\lambda_{min}\\) refers to the maximum and minimum eigenvalues respectively. If the noiseless version of the problem is \\(\mathbf{\hat{x}} = A^\dagger \mathbf{\hat{b}}\\) and the noisy version is \\(\mathbf{x} = A^\dagger \mathbf{b}\\), the relation between the estimates and condition number is given below:
 
 $$
 \frac{\vert \vert \mathbf{x} - \mathbf{\hat{x}}\vert \vert}{\vert \vert\mathbf{\hat{x}}\vert \vert} \le  \kappa \frac{\vert \vert \mathbf{\hat{b}} - \mathbf{b}\vert \vert}{\vert \vert\mathbf{\hat{b}}\vert \vert}
