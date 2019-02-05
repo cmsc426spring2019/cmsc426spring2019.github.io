@@ -16,8 +16,8 @@ Table of Contents:
 - [Collaboration Policy](#coll)
 
 <a name='due'></a>
-## Deadline 
-11:59PM, Tuesday, Feb 19, 2019 
+## Deadline
+11:59PM, Tuesday, Feb 19, 2019
 
 <a name='intro'></a>
 ## Introduction
@@ -25,12 +25,12 @@ Table of Contents:
 Have you ever played with these adorable Nao robots? Click on the image to watch a cool demo.  
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Gy_wbhQxd_0
-" target="_blank"><img src="http://img.youtube.com/vi/Gy_wbhQxd_0/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/Gy_wbhQxd_0/0.jpg"
 alt=" Nao robot demo " width="480" height="360" border="0" /></a>
 
 
-Nao robots are star players in RoboCup, an annual autonomous robot soccer competitions. 
-We are planning to build the Maryland RoboCup team to compete in RoboCup 2019, we need your help. 
+Nao robots are star players in RoboCup, an annual autonomous robot soccer competitions.
+We are planning to build the Maryland RoboCup team to compete in RoboCup 2019, we need your help.
 Would you like to help us in Nao's soccer training? We need to train Nao to detect a soccer ball and estimate the depth of the ball to know how far to kick.
 
 Nao's training has two phases:
@@ -39,15 +39,15 @@ Nao's training has two phases:
 
 <a name='problem'></a>
 ## What you need to do
-To make logistics easier, we have collected camera data from Nao robot on behalf of you and saved the data in the form of color images. Click [here](https://drive.google.com/file/d/17XiM86JqHqko4JC00-E4w4sPKnzh2iMz/view?usp=sharing) to download. The image names represent the depth of the ball from Nao robot in centimeters. **The test dataset is [here](https://drive.google.com/file/d/17tNn3YIVR-8kqoBgJNK58YY4UBnQmm4q/view?usp=sharing) to download**. 
+To make logistics easier, we have collected camera data from Nao robot on behalf of you and saved the data in the form of color images. Click [here](https://drive.google.com/file/d/17XiM86JqHqko4JC00-E4w4sPKnzh2iMz/view?usp=sharing) to download. The image names represent the depth of the ball from Nao robot in centimeters. **The test dataset is [here](https://drive.google.com/file/d/17tNn3YIVR-8kqoBgJNK58YY4UBnQmm4q/view?usp=sharing) to download**.
 
 <a name='pro'></a>
-### Problem Statement 
+### Problem Statement
+0. Prepare the data: Extract the regions of the ball from each of the test images. For example, you can use the *roipoly* function to do so. The image points obtained this way are the data that you will use to train your color model.
+1. Write MATLAB code to cluster the orange ball using a [Single Gaussian](https://cmsc426spring2019.github.io/colorseg/#gaussian) [30 points]
+2. Write MATLAB code to cluster the orange ball using a [Gaussian Mixture Model](https://cmsc426spring2019.github.io/colorseg/#gmm) [40 points] and estimate the [distance](https://cmsc426spring2019.github.io/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points].
 
-1. Write MATLAB code to cluster the orange ball using [Single Gaussian](https://cmsc426spring2019.github.io/colorseg/#gaussian) [30 points] 
-2. Write MATLAB code to cluster the orange ball using [Gaussian Mixture Model](https://cmsc426spring2019.github.io/colorseg/#gmm) [40 points] and estimate the [distance](https://cmsc426spring2019.github.io/colorseg/#distest) to the ball [20 points]. Also, plot all the GMM ellipsoids [10 points]. 
-
-You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()` or `gmdistribution.fit()` for GMM. To help you with code implementation, we have given the pseudocode :-) 
+You are **NOT** allowed to use any built-in MATLAB function(s) like `fitgmdist()` or `gmdistribution.fit()` for GMM. To help you with code implementation, we have given the pseudocode :-)
 
 
 <div class="fig fighighlight">
@@ -67,7 +67,7 @@ it.
 
 ### File tree and naming
 
-Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj1.zip**.  For example, xyz123_proj1.zip.  The file **must have the following directory structure**. 
+Your submission on Canvas must be a zip file, following the naming convention **YourDirectoryID_proj1.zip**.  For example, xyz123_proj1.zip.  The file **must have the following directory structure**.
 
 YourDirectoryID_proj1.zip.
  - train_images/.
@@ -99,4 +99,3 @@ As usual, your report must be full English sentences, **not** commented code. Th
 <a name='coll'></a>
 ## Collaboration Policy
 You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else's code in writing your project, you must properly cite it in your code (in comments) and your writeup. For the full honor code refer to the CMSC426 Fall 2018 website.
-
