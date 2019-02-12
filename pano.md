@@ -65,7 +65,7 @@ Take a patch of size $$40 \times 40$$ centered <b>(this is very important)</b> a
 
 <a name='feat-match'></a>
 ## 4. Feature Matching
-In the previous step, you encoded each keypoint by $$64\times1$$ feature vector. Now, you want to match the feature points among the two images you want to stitch together. In computer vision terms, this step is called as finding feature correspondences within the 2 images. Pick a point in image 1, compute sum of square difference between all points in image 2. Take the ratio of best match (lowest distance) to the second best match (second lowest distance) and if this is below some ratio keep the matched pair or reject it. Repeat this for all points in image 1. You will be left with only the comfident feature correspondences and these points will be used to estimate the transformation between the 2 images also called as <a href="pano-prereq#homography">_Homography_</a>. Use the function `dispMatchedFeatures` given to you to visualize feature correspondences. Fig. 5 shows a sample output of `disMatchedFeatures` on the first two images.
+In the previous step, you encoded each keypoint by a $$64\times1$$ feature vector. Now, you want to match the feature points in the two images so you can stitch the images together. In computer vision terms, this step is referred to as  finding feature correspondences within the 2 images. Pick a point in image 1, compute the sum of square difference between all points in image 2. Take the ratio of best match (lowest distance) to the second best match (second lowest distance) and if this is below some ratio keep the matched pair or reject it. Repeat this for all points in image 1. You will be left with only the comfident feature correspondences and these points will be used to estimate the transformation between the 2 images also called as <a href="pano-prereq#homography">_Homography_</a>. Use the function `dispMatchedFeatures` given to you to visualize feature correspondences. Fig. 5 shows a sample output of `disMatchedFeatures` on the first two images.
 
 <div class="fig figcenter fighighlight">
   <img src="/assets/pano/feat-match.png" width="100%">
@@ -74,7 +74,7 @@ In the previous step, you encoded each keypoint by $$64\times1$$ feature vector.
 
 <a name='homography'></a>
 ## 5. RANSAC to estimate Robust Homography
-We now have matched all the features correspondences but not all matches will be right. To remove incorrect matches, we will use a robust method called <i>Random Sampling Concensus</i> or <b>RANSAC</b> to compute homography.
+We now have matched all the features correspondences but not all matches will be right. To remove incorrect matches, we will use a robust method called <i>Random Sampling Concensus</i> or <b>RANSAC</b> to compute the homography.
 
 Recall the RANSAC steps are: 
 1. Select four feature pairs (at random), $$p_i$$ from image 1, $$p_i^1$$ from image 2.
