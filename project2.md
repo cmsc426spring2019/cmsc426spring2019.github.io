@@ -1,4 +1,4 @@
-
+---
 layout: page
 mathjax: true
 title: Panorama Stitching
