@@ -84,8 +84,10 @@ Your submission on Canvas must be a zip file, following the naming convention **
     - Code/
         - MyPanorama.m
         - *(any dependencies of MyPanorama.m)
-    - train_images/
-    - test_images/
+    - Images/
+        - input/
+        - CustomSet1,2/
+        - (all of the other train and test images)
     - input/
     - report.pdf
 
