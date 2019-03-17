@@ -88,7 +88,6 @@ Your submission on Canvas must be a zip file, following the naming convention **
         - input/
         - CustomSet1,2/
         - (all of the other train and test images)
-    - input/
     - report.pdf
 
 
