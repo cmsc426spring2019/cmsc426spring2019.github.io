@@ -15,7 +15,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Deadline 
-11:59PM, Tuesday, March 12, 2019
+11:59PM, Monday, March 18, 2019
 
 <a name='intro'></a>
 ## Introduction
@@ -84,9 +84,10 @@ Your submission on Canvas must be a zip file, following the naming convention **
     - Code/
         - MyPanorama.m
         - *(any dependencies of MyPanorama.m)
-    - train_images/
-    - test_images/
-    - input/
+    - Images/
+        - input/
+        - CustomSet1,2/
+        - (all of the other train and test images)
     - report.pdf
 
 
