@@ -100,6 +100,17 @@ functions like `mvnpdf` useful as well.
 You are encouraged to use Matlab's built-in optical flow functionality.  See
 `custom_img_utils/get_video_frames.m` for an example.
 
+
+#### Some Implementation Details
+
+For an nxm image:
+  -   Unary weights are represented as a nm x 2 matrix $$T\_$$ : for
+      each pixel \[Foreground weight, background weight\].
+  -   Binary weights are represented as a nm x nm matrix A: each
+      pixel’s connection to every other pixel. This is a constraint of
+      the maxflow library we’re using; we’re only considering each
+      pixel’s connection to its neighbors, so A is mostly empty.
+
 <a name='sub'></a>
 ## Submission Guidelines
 <b> We will deduct points if your submission does not comply with the following guidelines.</b>

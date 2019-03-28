@@ -3,26 +3,24 @@ layout: page
 mathjax: true
 permalink: /graphseg/
 ---
-*This article was written by [Jack Rasiel](http://jackrasiel.com)*
+*Written by [Jack Rasiel](http://jackrasiel.com)*
 
-* **Note:** These course notes accompany Project 3.  See the <a href='/2019/proj/p3/'>Project 3 prompt</a> for details on that assigment.*
+  - **Note:** These course notes accompany Project 3.  See the <a href='/2019/proj/p3/'>Project 3 prompt</a> for details on that assigment.*
 
-# Segmentation with Fixations:
+## Segmentation with Fixations
 
 Table of Contents:
 
-- [Introduction - What is Segmentation?](#intro)
+- [Introduction](#intro)
 - [Graph-based Segmentation: a Toy Example](#graph_basic)
 - [Fixation-based Segmentation](#graph_fixation)
 - [Adding Additional Image Features](#image_features)
 - [Recap](#recap)
 - [Appendix](#appendix)
-- [References](#ref)
-
 
 <a name='intro'></a>
 
-## Introduction - What is Segmentation?
+## Introduction
 
 For this project, we’ll explore one way to approach image segmentation.
 
@@ -39,20 +37,20 @@ background region (containing everything else).
 <div class="row">
     <div class="column">
         <img src="/assets/graphseg/segmentation_example1.png" width="400">
-        <div class="figcaption">Segmentation into categories. Image from Mishra, Ajay K., and Yiannis Aloimonos. "Visual segmentation of “Simple” objects for robots." *Robotics: Science and Systems VII* 217 (2012). </div>
+        <div class="figcaption" style="text-align: center" style="text-align: center" style="text-align: center">Segmentation into categories. Image from Mishra, Ajay K., and Yiannis Aloimonos. "Visual segmentation of “Simple” objects for robots." *Robotics: Science and Systems VII* 217 (2012). </div>
     </div>
 
     <div class="column">
         <img src="/assets/graphseg/segmentation_example2.png" width="400">
-        <div class="figcaption">Source: Wikimedia Commons</div>
+        <div class="figcaption" style="text-align: center">Source: Wikimedia Commons</div>
     </div>
 </div>
 </div>
 
-In fact, we’re already seen an example of simple foreground/background
+In fact, we’ve already seen an example of simple foreground/background
 segmentation: the GMM-based orange ball detector from project 1! But the approach we used there (train a GMM to recognize a range
 of colors characteristic of a specific object) had obvious limitations:
-it only detected a single object, and needed a set of training data to
+it could only segment that one specific object, and needed a set of training data to
 do so. What if we want something more powerful and generalizable?
 
 ## Motivation: Segmentation with Fixations
@@ -62,9 +60,9 @@ we’ll focus on a specific method proposed by Mishra, Aloimonos (our very
 own!), and Fah in their paper [“Active Segmentation with
 Fixation”](https://ieeexplore.ieee.org/abstract/document/5459254).
 
-**Note**: our implementation differs slightly from that proposed by
+**Note**: our implementation **differs slightly** from that proposed by
 Mishra et al. Specifically, we replace the log-polar transform
-with a distance-based weighting, and add texture features.
+with a distance-based weighting, and add texture features. (More on this later.)
 
 Most segmentation methods are “global”: they take in an entire
 image, and segment everything at once. But this differs
@@ -82,7 +80,7 @@ objects from the background.
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/segmentation_example_fixation.png">
-        <div class="figcaption">Left: image with two fixation points (indicated by the green and
+        <div class="figcaption" style="text-align: center">Left: image with two fixation points (indicated by the green and
     red x’s). Right: the result of segmentation given those fixation
     points. (Source: Mishra et al.) </div>
 </div>
@@ -114,7 +112,7 @@ difference in intensity of the pixels it connects:
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/fig_simple_graph_example.png" width="500">
-        <div class="figcaption"> Min-cut segmentation of a simple 3x3 image.  Nodes are
+        <div class="figcaption" style="text-align: center"> Min-cut segmentation of a simple 3x3 image.  Nodes are
 pixels.  In this illustration the thickness of an edge represents its weight. *Modified (with permission) from: Boykov, Yuri, and Gareth Funka-Lea. "Graph cuts
 and efficient ND image segmentation." International journal of computer vision 70.2
 (2006): 109-131.*</div>
@@ -140,7 +138,7 @@ example, let’s use this image:
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/bear.jpg" width="400">
-        <div class="figcaption"> *A typical grad TA at UMD. The green x marks the fixation
+        <div class="figcaption" style="text-align: center"> *A typical grad TA at UMD. The green x marks the fixation
             point, p\_{fix}. Source: Mishra et al.</div>
 </div>
 
@@ -161,7 +159,7 @@ is at the boundary between two regions of the image.
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/bear_edges.jpg">
-        <div class="figcaption">Boundary edge map $$I_{E}$$ (found via gPb) for image I. (Source: Mishra et al.)</div>
+        <div class="figcaption" style="text-align: center">Boundary edge map I_E (found via gPb) for image I. (Source: Mishra et al.)</div>
 </div>
 
 Unfortunately, there's one more problem we have to address: as currently constructed, the algorithm inherently prefers
@@ -194,7 +192,7 @@ paper.)
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/shortcut_problem_example.png">
-        <div class="figcaption">
+        <div class="figcaption" style="text-align: center">
 Fig 2 from Mishra et al.: (a) an example image. (b) The
 gradient edge map. (c) and (d) are the polar edge maps,
 generated by transforming the gradient edge map of the disc
@@ -213,7 +211,7 @@ re-run the segmentation:
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/bear_binary_seg.png" width="400">
-        <div class="figcaption">
+        <div class="figcaption" style="text-align: center">
         Segmentation, after accounting for “shortcutting” problem.
         (Source: Mishra et al.)
         </div>
@@ -232,7 +230,7 @@ around it, at significant cost.
 
         <img src="/assets/graphseg/bear_edges_marked.png" width="300">
 
-        <div class="figcaption"> $I_{E}$ annotated to illustrate segmentation errors (red) vs
+        <div class="figcaption" style="text-align: center"> $I_{E}$ annotated to illustrate segmentation errors (red) vs
         groundtruth path (blue). (Modified from Mishra et al.)     
         </div>
 </div>
@@ -253,38 +251,55 @@ original weights (based on $$I_{E}$$) are **binary weights**, as they
 describe the relationship between two pixels (i.e., the probability
 that there is a foreground/background boundary between two pixels).
 
--   A unary weight applies to an individual pixel, representing the
+-   A **unary weight** applies to an individual pixel, representing the
     likelihood that pixel is in the foreground or background.
--   A binary weight applies to an edge between two pixels,
+-   A **binary weight** applies to an edge between two pixels,
     representing the likelihood that there is a
     foreground/background boundary between them.
--   Looking back to the initial example: unary weights are the
-    connections between pixels and the source/sink node, and binary
-    weights are the connections between pixels:
+    
+Looking back to the initial example, unary weights are the
+connections between pixels and the source/sink node, and binary
+weights are the connections between pixels:
 
 <div class="fig figcenter fighighlight">
 <img src="/assets/graphseg/simple_graph_unary_binary.png" width="250">
-<div class="figcaption">Unary and binary weights. (*Modified from Boykov et al. Used with permission.*) </div>
+<div class="figcaption" style="text-align: center">Unary and binary weights. (Modified from Boykov et al. Used with permission.) </div>
 </div>
 
-Now, let's define our problem formally. Every pixel p IN I
-is a node in the graph. For every p, we want to find a labeling
-f(p) →  $$l_{p}$$, where $$l_{p}$$ IN {0,1}. This labeling must minimize
-the energy function Q:
+#### Formal Problem Statement
 
-$$ TODO equation coming tomorrow AM $$
-<!-- TODO add $$I_{E}$ definition and distance weighting term. -->
-  - $$U_{p}(l_{p})$$ is the unary weight.
-     - If using more than one feature type (for example, color,
+Now, let's define our problem formally. Set $$P$$ contains a node $$p$$ for each pixel in the image.  We want to find a binary labeling
+for all the nodes, $$f:p \mapsto l$$, where $$l_{p} = 0$$ if $$p$$ is in the foreground, and $$l_{p} = 1$$ if $$p$$ is in the background. This labeling must minimize
+the energy function $$Q(f)$$:
+
+$$ \eqalignno{Q(f)&=\sum_{p\in P}U_{p}(l_{p})+\lambda\sum_{(p, q)\in\Omega}V_{p, q}.\delta(l_{p}, l_{q})\cr } $$
+
+  - $$U_{p}(l_{p})$$ is the unary weight for $$p$$.
+     - *(If using more than one feature type (for example, color,
        texture, and flow), this is a weighted average of the different
-       features: $$aU^{color}(p) + bU^{text.}(p) + cU^{flow}(p)$$ for $$a+b+c = 1$$.
+       features: $$aU^{color}(p) + bU^{text.}(p) + cU^{flow}(p)$$ for $$a+b+c = 1$$.)*
+  - $$\Omega$$ is the set of all pairs of adjacent nodes.
+  - $$V(p,q)$$ is the binary weight for the edge connecting points $$p$$ and $$q$$ :
+   
+$$ \eqalignno{ 
+V_{p, q}&=\cases{exp(-\eta I_{E}(p,q))\;{\rm if} &$I_{E}(p,q)\neq 0$\cr 
+k&$otherwise$}\cr 
+} $$
 
-  - $$V(p,q)$$ is the binary weight for the edge connecting points p and q.
-  - Constants:
-     - $$\eta$$: Gain for non-zero values in binary edge map.
+  - $$\delta(l_{p},l_{q})$$ indicates whether the edge is a fg/bg boundary:
+     
+$$ \eqalignno{\delta(l_{p}, l_{q})&=\cases{1\quad {\rm if}&$l_{p}\neq l_{q}$\cr 
+0&$otherwise$}} $$
+
+  - $$I_{E}(p,q)$$ is the boundary probability of the edge between $$p$$ and $$q$$. 
+         *(i.e. $$(I_{E}(p)+I_{E}(q))/2$$.)*
+  - Constants: *(You might need to tune these!)*
+     - $$\eta$$ (=5): Gain for non-zero values in binary edge map.
      - $$k$$ (= 20): Default value for binary edge map (i.e. replaces zeros in $$I_{pq}$$)
      - $$D$$ (= 1e100): Source/Sink weight.
      - $$\lambda$$ (= 1000): Gain for binary weights.
+
+#### Generating the Unary Weights
 
 To determine our unary weights, we’ll use a familiar tool: the
 Gaussian Mixture Model! Specifically, we’ll train two separate
@@ -308,7 +323,7 @@ by $$G_{fg}$$) and background ($$G_{bg}$$):
 <img src="/assets/graphseg/unary_texture_bg.png" width="200">
 
 <img src="/assets/graphseg/unary_texture_fg.png" width="200">
-<div class="figcaption">Left: Background probability.  Right: Foreground probability.</div>
+<div class="figcaption" style="text-align: center">Left: Background probability.  Right: Foreground probability.</div>
 </div>
 
 After adding these as unary weights to the graph and resegmenting,
@@ -316,7 +331,7 @@ we get the following results:
 
 <div class="fig figcenter fighighlight">
 <img src="/assets/graphseg/bear_unary_binary_seg.png" width="400">
-<div class="figcaption">
+<div class="figcaption" style="text-align: center">
 Results of the second segmentation, with unary weights based
 on color features.
 </div>
@@ -331,7 +346,7 @@ Much better!
 
 Let’s take a moment to summarize the steps of our algorithm:
 
-  -   Input: image *I* and boundary edge map $$I_{E}$$.
+  -   Input: image $$I$$ and boundary edge map $$I_{E}$$.
   1.  First segmentation – **binary weights only** (derived from $$I_{E}$$).
       - Output: segmentation labels $$l_{initial}$$ (1 (background)
           or 0 (foreground) for each pixel).
@@ -343,19 +358,12 @@ Let’s take a moment to summarize the steps of our algorithm:
            -  If using texture/flow, do the same for $${G^{text.}_{fg}, G^{text.}_{bg}}$$, etc.
 
   3.  Unary weights:
-      -  For point p, unary weight $$ U^{color}(p) $$ = $$\[-log(p(p|G_{fg})),-log(p(p|G_{bg}))\]$$
+      -  For point $$p$$, unary weight $$ U^{color}(p) $$ = $$ [-log(p(p \vert G_{fg})) , -log(p(p \vert G_{bg})) ] $$
       -  *If using texture/flow as well, take a weighted average of
               the different features: $$aU^{color}(p) + bU^{text.}(p) + cU^{flow}(p)$$ for $$a+b+c = 1$$.
-
-# Implementation details
-
-For an nxm image:
-  -   Unary weights are represented as a nm x 2 matrix $$T_$$ : for
-      each pixel \[Foreground weight, background weight\].
-  -   Binary weights are represented as a nm x nm matrix A: each
-      pixel’s connection to every other pixel. This is a constraint of
-      the maxflow library we’re using; we’re only considering each
-      pixel’s connection to its neighbors, so A is mostly empty.
+              
+  - Result: segmentation labels $$l_{p}$$ (1 (background)
+          or 0 (foreground) for each pixel) for the image.
 
 <a name='appendix'></a>
 ## Appendix: Texture and Flow Features
@@ -363,7 +371,7 @@ For an nxm image:
 Color-based segmentation worked well in our example image, but in
 other cases we may find other cues useful as well.
 
-### Texture:
+#### Texture:
 
  An **image texture** is a set of metrics calculated in image
  processing designed to quantify the perceived texture of an image.
@@ -385,12 +393,12 @@ other cases we may find other cues useful as well.
 
 <div class="fig figcenter fighighlight">
 <img src="/assets/graphseg/filter_bank.png">
-<div class="figcaption"> Example of a filter bank of oriented derivative-of-gaussians.
+<div class="figcaption" style="text-align: center"> Example of a filter bank of oriented derivative-of-gaussians.
 </div>
 </div>
 
 
-### Flow:
+#### Flow:
 For sequences, we can improve segmentation further by including
 optical flow information. If the foreground and background have
 different relative motion, the optical flow may help us distinguish
@@ -398,10 +406,3 @@ them. The optical flow map can be used to train a GMM, in the same
 way as was done for color and texture. (For more information on
 optical flow, see
 [the lecture slides](https://cmsc426spring2019.github.io/lectures/week_6/flow.pptx).)
-
-
-<a name='ref'></a>
-<!--
-# References
--->
-
