@@ -7,7 +7,7 @@
     <title>Linear Least Squares</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Course materials and notes for University of Maryland's class CMSC426: Computer Vision.">
-    <link rel="canonical" href="http://cmsc426.github.io/2019/hw/hw1/">
+    <link rel="canonical" href="http://localhost:4000/2019/hw/hw1/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -52,22 +52,27 @@
   <article class="post-content">
   <p><strong>This article is written by <a href="http://analogicalnexus.github.io">Chethan Parameshwara</a>.</strong></p>
 
-<p>Table of Contents:<br />
-- <a href="#due">Due Date</a><br />
-- <a href="#intro">Introduction</a><br />
-- <a href="#problem">What you need to do</a><br />
-  - <a href="#pro">Problem Statement</a><br />
-- <a href="#sub">Submission Guidelines</a><br />
-- <a href="#coll">Collaboration Policy</a></p>
+<p>Table of Contents:</p>
+<ul>
+  <li><a href="#due">Due Date</a></li>
+  <li><a href="#intro">Introduction</a></li>
+  <li><a href="#problem">What you need to do</a>
+    <ul>
+      <li><a href="#pro">Problem Statement</a></li>
+    </ul>
+  </li>
+  <li><a href="#sub">Submission Guidelines</a></li>
+  <li><a href="#coll">Collaboration Policy</a></li>
+</ul>
 
-<p><a name="due"></a><br />
-## Due Date <br />
-10:59AM, Thursday, September 6, 2018</p>
+<p><a name="due"></a></p>
+<h2 id="due-date">Due Date</h2>
+<p>11:59PM, Thursday, February 7, 2019</p>
 
-<p><a name="intro"></a><br />
-## Introduction</p>
+<p><a name="intro"></a></p>
+<h2 id="introduction">Introduction</h2>
 
-<p>This home work is designed to test your understanding of mathematics tutorial discussed in this <a href="https://cmsc426.github.io/math-tutorial/">link</a>. The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:</p>
+<p>This home work is designed to test your understanding of mathematics tutorial discussed in this <a href="https://cmsc426spring2019.github.io/math-tutorial/">link</a>. The task is to fit the line to two dimensional data points using different linear least square techniques discussed in the tutorials:</p>
 
 <ul>
   <li>Line fitting using Linear Least Squares</li>
@@ -75,8 +80,8 @@
   <li>Outliers rejection using RANSAC</li>
 </ul>
 
-<p><a name="problem"></a><br />
-## What you need to do</p>
+<p><a name="problem"></a></p>
+<h2 id="what-you-need-to-do">What you need to do</h2>
 
 <p>The 2D points data is provided in the form of .mat file (click <a href="https://drive.google.com/file/d/1B90tU1-HrR2YMjZC50APiNkQdLtVco6z/view?usp=sharing">here</a> to download). The visualization of data with different noise level is shown in the following figure.</p>
 
@@ -87,16 +92,16 @@
   <div style="clear:both;"></div>
 </div>
 
-<p><a name="pro"></a><br />
-### Problem Statement</p>
+<p><a name="pro"></a></p>
+<h3 id="problem-statement">Problem Statement</h3>
 
 <ul>
   <li>Write matlab code to visualize geometric interpretation of eigenvalues/covariance matrix as discussed in this <a href="http://www.visiondummy.com/2014/04/geometric-interpretation-covariance-matrix/">link</a> [40 points]</li>
   <li>Decide the best outlier rejection technique for each of these datasets and write matlab code to fit the line. Also, discuss why your choice of technique is optimal [60 points]</li>
 </ul>
 
-<p><a name="sub"></a><br />
-## Submission Guidelines</p>
+<p><a name="sub"></a></p>
+<h2 id="submission-guidelines">Submission Guidelines</h2>
 
 <p><b> If your submission does not comply with the following guidelines, you’ll be given ZERO credit </b></p>
 
@@ -104,11 +109,13 @@
 
 <p>Your submission on Canvas must be a zip file, following the naming convention <strong>YourDirectoryID_hw1.zip</strong>.  For example, xyz123_hw1.zip.  The file <strong>must have the following directory structure</strong>, based on the starter files</p>
 
-<p>YourDirectoryID_hw1.zip.<br />
- - data/. <br />
- - plot_eigen.m.<br />
- - least_square.m.<br />
- - report.pdf</p>
+<p>YourDirectoryID_hw1.zip.</p>
+<ul>
+  <li>data/.</li>
+  <li>plot_eigen.m.</li>
+  <li>least_square.m.</li>
+  <li>report.pdf</li>
+</ul>
 
 <h3 id="report">Report</h3>
 <p>For each section of the homework, explain briefly what you did, and describe any interesting problems you encountered and/or solutions you implemented.  You must include the following details in your writeup:</p>
@@ -121,9 +128,9 @@
 
 <p>As usual, your report must be full English sentences,<strong>not</strong> commented code. There is a word limit of 750 words and no minimum length requirement</p>
 
-<p><a name="coll"></a><br />
-## Collaboration Policy<br />
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else’s code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2018 website</p>
+<p><a name="coll"></a></p>
+<h2 id="collaboration-policy">Collaboration Policy</h2>
+<p>You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else’s code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Spring 2019 website</p>
 
   </article>
 

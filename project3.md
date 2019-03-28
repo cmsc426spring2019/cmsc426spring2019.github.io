@@ -21,7 +21,7 @@ Table of Contents:
 In this project, we'll implement a graph-based segmentation algorithm, based on Mishra et al.'s
 ["Active Segmentation with Fixation"](https://ieeexplore.ieee.org/abstract/document/5459254).  You'll understand how segmentation can be framed as a min-cut on a graph, and explore how different image features can be used to assign weights to that graph.
 
-This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, <b>see <a href="https://cmsc426spring2019.github.io/segmentation/">the course notes for this project</a></b>.
+This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, <b>see <a href="https://cmsc426spring2019.github.io/graphseg/">the course notes for this project</a></b>.
 
 <a name='system_overview'></a>
 ## Implementation Overview:

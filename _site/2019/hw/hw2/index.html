@@ -7,7 +7,7 @@
     <title>Image Features and Warping</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Course materials and notes for University of Maryland's class CMSC426: Computer Vision.">
-    <link rel="canonical" href="http://cmsc426.github.io/2019/hw/hw2/">
+    <link rel="canonical" href="http://localhost:4000/2019/hw/hw2/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -50,41 +50,43 @@
   </header>
 
   <article class="post-content">
-  <p>Table of Contents:<br />
-- <a href="#due">Due Date</a><br />
-- <a href="#intro">Introduction</a><br />
-- <a href="#part1">Part 1: Coding</a><br />
-- <a href="#part2">Part 2: Short Answer</a><br />
-- <a href="#sub">Submission Guidelines</a><br />
-- <a href="#coll">Collaboration Policy</a></p>
+  <p>Table of Contents:</p>
+<ul>
+  <li><a href="#due">Due Date</a></li>
+  <li><a href="#intro">Introduction</a></li>
+  <li><a href="#part1">Part 1: Coding</a></li>
+  <li><a href="#part2">Part 2: Short Answer</a></li>
+  <li><a href="#sub">Submission Guidelines</a></li>
+  <li><a href="#coll">Collaboration Policy</a></li>
+</ul>
 
-<p><a name="due"></a><br />
-## Due Date <br />
-10:59AM, Tuesday, October 2nd, 2018</p>
+<p><a name="due"></a></p>
+<h2 id="due-date">Due Date</h2>
+<p>11:59PM, Thursday, February 28, 2019</p>
 
-<p><a name="intro"></a><br />
-## Introduction</p>
+<p><a name="intro"></a></p>
+<h2 id="introduction">Introduction</h2>
 
-<p>This homework reviews some important concepts related to Project 2 (Panorama Stitching).  It is composed<br />
+<p>This homework reviews some important concepts related to Project 2 (Panorama Stitching).  It is composed
 of a coding problem and two short answer questions.</p>
 
-<p><a name="part1"></a><br />
-## Part 1: Coding - Harris Corner Detection (50 pts)</p>
+<p><a name="part1"></a></p>
+<h2 id="part-1-coding---harris-corner-detection-50-pts">Part 1: Coding - Harris Corner Detection (50 pts)</h2>
 
 <p>In Project 2, you’ll be using Matlab’s built-in corner detector, via the <code class="highlighter-rouge">cornermetric</code> function.  In this coding assignment, we’ll ask you to implement a simple corner detector yourself: the “Harris” corner detector.</p>
 
-<p>Check out <a href="http://www.cse.psu.edu/~rtc12/CSE486/lecture06.pdf">these slides from Penn State’s CSE486</a> for an excellent overview of how the Harris Corner<br />
+<p>Check out <a href="http://www.cse.psu.edu/~rtc12/CSE486/lecture06.pdf">these slides from Penn State’s CSE486</a> for an excellent overview of how the Harris Corner
 Detector works.</p>
 
 <h3 id="what-you-need-to-do">What you need to do.</h3>
 
-<p>Write a matlab function <code class="highlighter-rouge">corner_response=myharris(I, window_size, corner_thresh)</code> which implements Harris<br />
+<p>Write a matlab function <code class="highlighter-rouge">corner_response=myharris(I, window_size, corner_thresh)</code> which implements Harris
 corner detection.  To make things a bit easier, you don’t need to implement the final non-maximal suppression step.  So, it should return a heatmap of corner response, for a given image, window size, and corner threshold.</p>
 
 <p>See “Submission Guidelines” for instructions on what to include in your report.</p>
 
-<p><a name="part2"></a><br />
-## Part 2: Short Answer</p>
+<p><a name="part2"></a></p>
+<h2 id="part-2-short-answer">Part 2: Short Answer</h2>
 
 <h3 id="question-1-harris-corner-detector-properties-15-pts">Question 1: Harris Corner Detector Properties (15 pts)</h3>
 
@@ -102,29 +104,29 @@ corner detection.  To make things a bit easier, you don’t need to implement th
 <p>Answer briefly– two paragraphs or fewer.</p>
 
 <h3 id="question-2--image-warping-and-invertible-transformations-35-pts">Question 2:  Image Warping and Invertible Transformations (35 pts)</h3>
-<p>Given a digital image, and an invertible transformation <script type="math/tex">\tilde{\textbf{H}}</script> of the form<br />
-<script type="math/tex">\tilde{p}' \equiv \tilde{H} \tilde{p}</script><br />
-we would like to compute the warped image whereby each point in the original image is transformed to<br />
+<p>Given a digital image, and an invertible transformation <script type="math/tex">\tilde{\textbf{H}}</script> of the form
+<script type="math/tex">\tilde{p}' \equiv \tilde{H} \tilde{p}</script>
+we would like to compute the warped image whereby each point in the original image is transformed to
 its new location.</p>
 
-<p>This type of image warping is exactly what the Matlab <code class="highlighter-rouge">imwarp</code> function does, for<br />
+<p>This type of image warping is exactly what the Matlab <code class="highlighter-rouge">imwarp</code> function does, for
 example.</p>
 
-<p>We could envision a somewhat straightforward algorithm for performing this image warp:<br />
-for each location <script type="math/tex">\tilde{p}</script> in the original image, compute the nearest pixel location of the<br />
-transformed point <script type="math/tex">\tilde{p}'</script> in the warped image, and copy the color found in <script type="math/tex">\tilde{p}</script> into the<br />
+<p>We could envision a somewhat straightforward algorithm for performing this image warp:
+for each location <script type="math/tex">\tilde{p}</script> in the original image, compute the nearest pixel location of the
+transformed point <script type="math/tex">\tilde{p}'</script> in the warped image, and copy the color found in <script type="math/tex">\tilde{p}</script> into the
 warped image at location <script type="math/tex">\tilde{p}'</script>.</p>
 
-<p>However, the vastly preferable algorithm is to loop over the <em>destination</em> pixels<br />
-<script type="math/tex">\tilde{p}'</script> in the warped image, and use the inverse transformation <script type="math/tex">\tilde{H}^{-1}</script> to identify<br />
-the nearest pixel <script type="math/tex">\tilde{p}</script> in the source image and copy the color from that source pixel to the<br />
+<p>However, the vastly preferable algorithm is to loop over the <em>destination</em> pixels
+<script type="math/tex">\tilde{p}'</script> in the warped image, and use the inverse transformation <script type="math/tex">\tilde{H}^{-1}</script> to identify
+the nearest pixel <script type="math/tex">\tilde{p}</script> in the source image and copy the color from that source pixel to the
 destination.</p>
 
-<p>What is the difference between the two approaches? Why is the second one preferable?  Please answer<br />
+<p>What is the difference between the two approaches? Why is the second one preferable?  Please answer
 in no more than a paragraph.</p>
 
-<p><a name="sub"></a><br />
-## Submission Guidelines</p>
+<p><a name="sub"></a></p>
+<h2 id="submission-guidelines">Submission Guidelines</h2>
 
 <p><b> We will deduct points if your homework doesn’t follow these specifications. </b></p>
 
@@ -147,9 +149,9 @@ in no more than a paragraph.</p>
 
 <p>As usual, your report must be full English sentences,<strong>not</strong> commented code.</p>
 
-<p><a name="coll"></a><br />
-## Collaboration Policy<br />
-You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else’s code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Fall 2018 website</p>
+<p><a name="coll"></a></p>
+<h2 id="collaboration-policy">Collaboration Policy</h2>
+<p>You are encouraged to discuss the ideas with your peers. However, the code should be your own, and should be the result of you exercising your own understanding of it. If you reference anyone else’s code in writing your project, you must properly cite it in your code (in comments) and your writeup.  For the full honor code refer to the CMSC426 Spring 2019 website</p>
 
   </article>
 
