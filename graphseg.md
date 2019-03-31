@@ -92,14 +92,14 @@ objects from the background.
 
 
 Before we get into the details of our fixation-based approach, let’s
-consider a basic example of graph-based binary segmentation (binary
-segmentation = foreground/background) segmentation.
+consider a basic example of graph-based binary segmentation ("binary
+segmentation" = segmentation into foreground and background).
 
 In the broadest sense, graph-based segmentation represents an image
 as a graph G = (V, E): the vertices V are regions of the image,
 connected by edges E which are weighted based on some measure of
-pixel similarity. The source vertex *s *is connected to some pixels
-which are known to be in the background, and the sink *t *is
+pixel similarity. The source vertex *s* is connected to some pixels
+which are known to be in the background, and the sink *t* is
 connected to pixels known to be in the foreground (these pixels are
 identified beforehand). To segment the image, we find a
 [minimum-energy cut](https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/netflow.pdf)
@@ -164,31 +164,11 @@ is at the boundary between two regions of the image.
 
 Unfortunately, there's one more problem we have to address: as currently constructed, the algorithm inherently prefers
 shorter contours. To illustrate why (and why this is a problem), let’s use another example. In
-\[fig somethin\], we want to find the optimal contour in the disc
+the figure below, we want to find the optimal contour in the disc
 for the red fixation point. In this case, the outer (white) circle
 is the actual boundary, while the inner (gray) circle is an internal
 boundary (analogous to the internal boundary created by the bear’s
 muzzle in the boundary edge map). Which contour will be the min-cut?
-
-Well, in the edge map (b), the pixels of the outer ring have
-value 0.78, and the inner ring 0.39. The outer ring has radius
-400, and the inner 100. So, the cost of the outer contour will
-be 61=(100×(1−0.39)), and internal contour 88=(400×(1−0.78));
-and thus the algorithm (incorrectly) chooses the inner contour.
-
-To address this, we need to make the cost of a segmented region
-is independent of the area it encloses. One way to accomplish
-this is to transform the image into [polar coordinates](https://en.wikipedia.org/wiki/Polar_coordinate_system): “unrolling” the image in a
-circle around the fixation point. See (c) below for an
-example of unrolling around the red fixation point. (Desirably,
-this transform also makes the optimal contour stable when the
-location of the fixation point within the object changes. See,
-for example, the green vs red fixation points in the fig below,
-with their corresponding polar transforms (c) and (d): the shape
-of the transformed contours change slightly, but this doesn’t
-change which one is optimal. Mishra et al. show that this
-property holds for general images in section 8.1 of their
-paper.)
 
 <div class="fig figcenter fighighlight">
         <img src="/assets/graphseg/shortcut_problem_example.png">
@@ -200,10 +180,29 @@ w.r.t the red and green fixations (respectively).
 </div>
 </div>
 
+Well, in the edge map (b), the pixels of the outer ring have
+value 0.78, and the inner ring 0.39. The outer ring has radius
+400, and the inner 100. So, the cost of the outer contour will
+be 61=(100×(1−0.39)), and internal contour 88=(400×(1−0.78)); thus the algorithm (incorrectly) chooses the inner contour.
+
+To address this, we need to make the cost of a segmented region
+is independent of the area it encloses. One way to accomplish
+this is to transform the image into [polar coordinates](https://en.wikipedia.org/wiki/Polar_coordinate_system): “unrolling” the image in a
+circle around the fixation point. See (c) for an
+example of unrolling around the red fixation point. (Desirably,
+this transform also makes the optimal contour stable when the
+location of the fixation point within the object changes. See,
+for example, the green vs red fixation points in the fig below,
+with their corresponding polar transforms (c) and (d): the shape
+of the transformed contours change slightly, but this doesn’t
+change which one is optimal. Mishra et al. show that this
+property holds for general images in section 8.1 of their
+paper.)
+
 - **NOTE**: for project 3, you shouldn’t actually transform the image
-into polar coordinates. The transformation introduces artifacts more
-as theta approaches 0, as the pixels become more and more stretched.
-A better solution is to add an additional weighting term which is
+into polar coordinates. The transformation introduces artifacts
+as theta approaches 0 and the pixels become more and more stretched.
+A better solution is to add an **additional weighting term** which is
 inversely proportional to the distance from the fixation point.
 
 Alright, now that we’ve fixed the “shortcutting” problem, let’s
@@ -275,9 +274,9 @@ the energy function $$Q(f)$$:
 $$ \eqalignno{Q(f)&=\sum_{p\in P}U_{p}(l_{p})+\lambda\sum_{(p, q)\in\Omega}V_{p, q}.\delta(l_{p}, l_{q})\cr } $$
 
   - $$U_{p}(l_{p})$$ is the unary weight for $$p$$.
-     - *(If using more than one feature type (for example, color,
+     - (If using more than one feature type (for example, color,
        texture, and flow), this is a weighted average of the different
-       features: $$aU^{color}(p) + bU^{text.}(p) + cU^{flow}(p)$$ for $$a+b+c = 1$$.)*
+       features: $$aU^{color}(p) + bU^{text.}(p) + cU^{flow}(p)$$ for $$a+b+c = 1$$.)
   - $$\Omega$$ is the set of all pairs of adjacent nodes.
   - $$V(p,q)$$ is the binary weight for the edge connecting points $$p$$ and $$q$$ :
    
@@ -387,7 +386,7 @@ other cases we may find other cues useful as well.
  distributions. A simple but effective filter bank is a collection of
  oriented Derivative of Gaussian filters. These filters can be
  created by convolving a simple Sobel filter and a Gaussian kernel
- and then rotating the result. Suppose we want *o *orientations (from
+ and then rotating the result. Suppose we want *o* orientations (from
  0 to 360◦) and *s* scales, we should end up with a total of s × o
  filters. A sample filter bank of size 2×16 is shown below:
 
