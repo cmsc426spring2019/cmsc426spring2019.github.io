@@ -5,7 +5,7 @@ permalink: /graphseg/
 ---
 *Written by [Jack Rasiel](http://jackrasiel.com)*
 
-  - **Note:** These course notes accompany Project 3.  See the <a href='/2019/proj/p3/'>Project 3 prompt</a> for details on that assigment.*
+  - **Note:** These course notes accompany Project 3.  See the <a href='/2019/proj/p3/'>Project 3 prompt</a> for details on that assigment.
 
 ## Segmentation with Fixations
 
