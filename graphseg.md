@@ -148,6 +148,11 @@ that the object is entirely within frame (i.e. its outline doesn’t
 intersect with the bounds of the image), we can designate all of the
 boundary pixels to be the sink *t*.
 
+<div class="fig figcenter fighighlight">
+        <img src="/assets/graphseg/fig_simple_graph_fixation_example.png" width="300">
+        <div class="figcaption" style="text-align: center"> The source is connected to the fixation point, p\_{fix}, and the sink is connected to *all* the outermost points of the image.</div>
+</div>
+
 What about the edge weights? Unfortunately the simple
 “change-in-intensity” metric from before is too simplistic for more
 complicated images. Instead, we’ll use a higher-level feature:
