@@ -7,7 +7,7 @@
     <title>Panorama Stitching</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Course materials and notes for University of Maryland's class CMSC426: Computer Vision.">
-    <link rel="canonical" href="http://cmsc426.github.io/2018/proj/p2/">
+    <link rel="canonical" href="http://localhost:4000/2019/proj/p2/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -50,27 +50,32 @@
   </header>
 
   <article class="post-content">
-  <p>Table of Contents:<br />
-- <a href="#due">Deadline</a><br />
-- <a href="#intro">Introduction</a><br />
-- <a href="#system_overview">System Overview</a><br />
-  - <a href="#pro">Problem Statement</a><br />
-- <a href="#sub">Submission Guidelines</a><br />
-- <a href="#coll">Collaboration Policy</a></p>
+  <p>Table of Contents:</p>
+<ul>
+  <li><a href="#due">Deadline</a></li>
+  <li><a href="#intro">Introduction</a></li>
+  <li><a href="#system_overview">System Overview</a>
+    <ul>
+      <li><a href="#pro">Problem Statement</a></li>
+    </ul>
+  </li>
+  <li><a href="#sub">Submission Guidelines</a></li>
+  <li><a href="#coll">Collaboration Policy</a></li>
+</ul>
 
-<p><a name="due"></a><br />
-## Deadline <br />
-10:59AM, Tuesday, October 09, 2018</p>
+<p><a name="due"></a></p>
+<h2 id="deadline">Deadline</h2>
+<p>11:59PM, Monday, March 18, 2019</p>
 
-<p><a name="intro"></a><br />
-## Introduction</p>
+<p><a name="intro"></a></p>
+<h2 id="introduction">Introduction</h2>
 
 <p>The aim of this project is to implement an end-to-end pipeline for panorama stitching. We all use the panorama mode on our smart-phones– you’ll implement a pipeline which does the same basic thing!</p>
 
-<p>This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, see <a href="https://cmsc426.github.io/pano/">the course notes for this project</a>.</p>
+<p>This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, see <a href="https://cmsc426spring2019.github.io/pano/">the course notes for this project</a>.</p>
 
-<p><a name="system_overview"></a><br />
-## System Overview</p>
+<p><a name="system_overview"></a></p>
+<h2 id="system-overview">System Overview</h2>
 
 <p>Here’s a system diagram, showing each step in your panorama-stitching pipeline:</p>
 
@@ -107,7 +112,7 @@
 <p>Please find the starter code at <a href="https://drive.google.com/file/d/1RA-NYd3CErQSqKy0OAlC7LqCgIiuxKiw/view?usp=sharing">this
 link</a>.</p>
 
-<p>This also includes three sets of “training<br />
+<p>This also includes three sets of “training
 images”.  Twenty-four hours before the due date, we’ll distribute a “test set” of two more sets of images (look out for an announcement on Piazza).</p>
 
 <p>When writing your program, you can assume that input images will always follow the filename convention “1.jpg”, “2.jpg”, etc.</p>
@@ -116,10 +121,12 @@ images”.  Twenty-four hours before the due date, we’ll distribute a “test 
 
 <p>For this project, imfilter, conv2, imrotate, im2double, rgb2gray, fspecial, imtransform, imwarp (and imref2d), meshgrid, sub2ind, ind2sub and all other plotting and matrix operation/manipulation functions are allowed.</p>
 
-<p><a name="sub"></a><br />
-## Submission Guidelines</p>
+<p><a name="sub"></a></p>
+<h2 id="submission-guidelines">Submission Guidelines</h2>
 
 <p><b> We will deduct points if your submission does not comply with the following guidelines.</b></p>
+
+<p>Please submit the project <b> once </b> for your group – there’s no need for each member to submit it.</p>
 
 <h3 id="file-tree-and-naming">File tree and naming</h3>
 
@@ -134,33 +141,42 @@ images”.  Twenty-four hours before the due date, we’ll distribute a “test 
           <li>*(any dependencies of MyPanorama.m)</li>
         </ul>
       </li>
-      <li>train_images/</li>
-      <li>test_images/</li>
-      <li>input/</li>
+      <li>Images/
+        <ul>
+          <li>input/</li>
+          <li>CustomSet1,2/</li>
+          <li>(all of the other train and test images)</li>
+        </ul>
+      </li>
       <li>report.pdf</li>
     </ul>
   </li>
 </ul>
 
-<p>When run, MyPanorama.m must load a set of images from <em>Images/input/</em>, and return<br />
+<p>When run, MyPanorama.m must load a set of images from <em>Images/input/</em>, and return
 the resulting panorama.</p>
 
 <h3 id="report">Report</h3>
-<p><strong>You will be graded primarily based on your report.</strong>  We want<br />
-you to demonstrate an understanding of the concepts involved in the project, and to show the output<br />
+<p><strong>You will be graded primarily based on your report.</strong>  We want
+you to demonstrate an understanding of the concepts involved in the project, and to show the output
 produced by your code.</p>
 
-<p>Include visualizations of the output of each stage in your pipeline (as shown in the system diagram<br />
-on page 2), and a description of what you did for each step.  Assume that we’re familiar with the<br />
+<p>Logistics and bookkeeping you <strong>must</strong> include at the top of your report (-5 points for each one that’s missing):</p>
+<ul>
+  <li>The name of each group member. - A brief (one paragraph or less) description of what each group member contributed to the project.</li>
+</ul>
+
+<p>Include visualizations of the output of each stage in your pipeline (as shown in the system diagram
+on page 2), and a description of what you did for each step.  Assume that we’re familiar with the
 project, so you don’t need to spend time repeating what’s already in the course notes.  Instead, focus on any interesting problems you encountered and/or solutions you implemented.</p>
 
 <p>Be sure to include the output panoramas for <strong>all five image sets</strong> (from the training <strong>and</strong> test sets).  Because you have limited time in which to access the “test set” images, we won’t expect in-depth analysis of your results for them.</p>
 
 <p>As usual, your report must be full English sentences, <strong>not</strong> commented code. There is a word limit of 1500 words and no minimum length requirement.</p>
 
-<p><a name="coll"></a><br />
-## Collaboration Policy<br />
-We encourage you to work closely with your groupmates, including collaborating on writing code.  With students outside your group, you may discuss methods and ideas but may not share code.</p>
+<p><a name="coll"></a></p>
+<h2 id="collaboration-policy">Collaboration Policy</h2>
+<p>We encourage you to work closely with your groupmates, including collaborating on writing code.  With students outside your group, you may discuss methods and ideas but may not share code.</p>
 
 <p>For the full collaboration policy, including guidelines on citations and limitations on using online resources, see <a href="http://prg.cs.umd.edu/cmsc426">the course website</a>.</p>
 

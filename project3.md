@@ -21,7 +21,7 @@ Table of Contents:
 In this project, we'll implement a graph-based segmentation algorithm, based on Mishra et al.'s
 ["Active Segmentation with Fixation"](https://ieeexplore.ieee.org/abstract/document/5459254).  You'll understand how segmentation can be framed as a min-cut on a graph, and explore how different image features can be used to assign weights to that graph.
 
-This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, <b>see <a href="https://cmsc426spring2019.github.io/segmentation/">the course notes for this project</a></b>.
+This document just provides an overview of what you need to do.  For a full breakdown of how each step in the pipeline works, <b>see <a href="https://cmsc426spring2019.github.io/graphseg/">the course notes for this project</a></b>.
 
 <a name='system_overview'></a>
 ## Implementation Overview:
@@ -63,7 +63,7 @@ notes.)
 ## Project Files
 
 Please download the starter code
-[here](https://drive.google.com/open?id=1u5MUK4Ns25o-2P3DZV-7TLVIuNNtfqlW).
+[here](https://drive.google.com/open?id=1cHpODG8Vfgt9P8wH1jIK18QT-ahLjDIP).
 
 Files to modify:
 
@@ -99,6 +99,17 @@ functions like `mvnpdf` useful as well.
 
 You are encouraged to use Matlab's built-in optical flow functionality.  See
 `custom_img_utils/get_video_frames.m` for an example.
+
+
+#### Some Implementation Details
+
+For an nxm image:
+  -   Unary weights are represented as a nm x 2 matrix $$T\_$$ : for
+      each pixel \[Foreground weight, background weight\].
+  -   Binary weights are represented as a nm x nm matrix A: each
+      pixel’s connection to every other pixel. This is a constraint of
+      the maxflow library we’re using; we’re only considering each
+      pixel’s connection to its neighbors, so A is mostly empty.
 
 <a name='sub'></a>
 ## Submission Guidelines
