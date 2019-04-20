@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-Saturday, April 27, 2019
+11:59 PM, Saturday, April 27, 2019
 
 <a name='intro'></a>
 ## Introduction
@@ -40,7 +40,7 @@ it as one of the 10 digits. This task can be visualized in Figure 1
 
 
 <a name='part1'></a>
-## Part 1: Coding - Implementation (50 pts)
+## Part 1: Implementation (50 pts)
 
 
 There are three steps to this approach.
