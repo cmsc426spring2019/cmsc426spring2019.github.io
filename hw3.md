@@ -44,21 +44,31 @@ it as one of the 10 digits. This task can be visualized in Figure 1
 
 
 There are three steps to this approach.
-Visual Vocabulary
+
+## Visual Vocabulary
+
 Use Speeded up robust features (SURF) to find a feature descriptor followed by K-means to obtain a visual
 vocabulary. The number of k-means clusters is the size of our visual vocabulary and the size of our features. Go
 over the slides to understand SURF, K-Means algorithm and bag of features. For a detailed description of SURF
 read the the paper, “SURF: Speeded Up Robust Features" by Bay et al. See bagOfFeatures command in Matlab.
-SVM Classifier Training
+
+## SVM Classifier Training
+
 Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a visual vocabulary in the previous step. For a thorough understanding of SVM, refer to the heavily cited paper, “A Tutorial on
 Support Vector Machines for Pattern Recognition", by Christopher Burges. You can also look at this medium article
 https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72.
-You would need to train the classifier as a one vs. all. See Matlab commands, multisvm and trainImageCategoryClassifier.
-Test your model
+
+You would need to train the classifier as a one vs. all. 
+See Matlab commands, multisvm and trainImageCategoryClassifier.
+
+## Test your model
+
 Apply the trained classifier to the test image. Here you would test it the following two ways:
-• Extract the bag of features for the test image and then pass it as an input to the model you created during
+
+- Extract the bag of features for the test image and then pass it as an input to the model you created during
 training, and,
-• Pass the test image directly to the SVM model without any feature extraction.
+- Pass the test image directly to the SVM model without any feature extraction.
+
 See Matlab command predict.
 
 
