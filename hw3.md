@@ -1,11 +1,11 @@
 ---
 layout: page
 mathjax: true
-title: SVMs
+title: Image Classification Using Bag of Features and Support Vector Machines
 permalink: /2019/hw/hw3/
 ---
 
-## UNDER CONSTRUCTION.
+
 
 Table of Contents:
 - [Due Date](#due)
