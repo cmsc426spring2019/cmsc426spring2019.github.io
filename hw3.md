@@ -31,6 +31,12 @@ you would specifically consider one digit at a time to classify and consider it 
 digits’ images as negative examples. Once the classifier is trained you would test an unlabeled image and classify
 it as one of the 10 digits. This task can be visualized in Figure 1
 
+<div class="fig fighighlight">
+  <img src="/assets/hwk3/hwk3_image.PNG" width="100%">
+  <div class="figcaption">
+  </div>
+  <div style="clear:both;"></div>
+</div>
 <a name='part1'></a>
 ## Part 1: 
 
