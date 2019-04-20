@@ -60,22 +60,22 @@ Apply the trained classifier to the test image. Here you would test it the follo
 training, and,
 • Pass the test image directly to the SVM model without any feature extraction.
 See Matlab command predict.
-### What you need to do.
+
 
 <a name='part2'></a>
-## Part 2: - What to submit
+## Part 2: - What to submit (50 points)
 
 1. Show a 10 × 10 confusion matrix with digits from 0-9 as its rows and columns. It is used to determine the
 accuracy of your classifier. In this matrix the rows are the actual digit label and the columns are the predicted
 label. Each cell in this matrix will contain the prediction count. Ideally, we would like all the off-diagonal
 numbers in this matrix to be 0’s, however, that is not always possible. For example in the matrix below with
 100 images of each of the three digits, 0, 1, 2,
-Predictions
-0 1 2
-0 93 2 5
-Actual
-1 0 98 2
-2 1 1 98
+<div class="fig fighighlight">
+  <img src="/assets/hwk3/table.png" width="100%">
+  <div class="figcaption">
+  </div>
+  <div style="clear:both;"></div>
+</div>
 the confusion matrix can be read as, digit 0 was correctly classified as a 0, 93 times, and wrongly classified as
 1 and 2, two times and five times, respectively. Similarly, digit 1 was correctly classified 98 out of 100 times
 and digit 2 was also correctly classified 98% of the time.
@@ -83,7 +83,7 @@ and digit 2 was also correctly classified 98% of the time.
 like.
 3. Explain in one or two paragraphs your observations about the prediction of a test image, with and without
 extraction of the bag of features.
-2
+
 
 <a name='sub'></a>
 ## Submission Guidelines
