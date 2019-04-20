@@ -56,7 +56,7 @@ read the the paper, “SURF: Speeded Up Robust Features" by Bay et al. See bagOf
 
 Train SVM on the resulting histograms (each histogram is a feature vector, with a label) obtained as a visual vocabulary in the previous step. For a thorough understanding of SVM, refer to the heavily cited paper, “A Tutorial on
 Support Vector Machines for Pattern Recognition", by Christopher Burges. You can also look at this medium article
-https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72.
+<a href="https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72"> https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72</a>.
 
 You would need to train the classifier as a one vs. all. 
 See Matlab commands, multisvm and trainImageCategoryClassifier.
