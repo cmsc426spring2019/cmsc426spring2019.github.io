@@ -32,7 +32,7 @@ digits’ images as negative examples. Once the classifier is trained you would 
 it as one of the 10 digits. This task can be visualized in Figure 1
 
 <div class="fig fighighlight">
-  <img src="/assets/hwk3/hwk3-image.PNG" width="100%">
+  <img src="/assets/hwk3/hwk3-image.png" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
