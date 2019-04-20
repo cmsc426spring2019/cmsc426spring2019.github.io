@@ -17,7 +17,7 @@ Table of Contents:
 
 <a name='due'></a>
 ## Due Date 
-TBA
+Saturday, April 27, 2019
 
 <a name='intro'></a>
 ## Introduction
