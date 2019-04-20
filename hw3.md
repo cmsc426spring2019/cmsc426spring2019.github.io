@@ -38,8 +38,8 @@ it as one of the 10 digits. This task can be visualized in Figure 1
   <div style="clear:both;"></div>
 </div>
 <a name='part1'></a>
-## Part 1: 
-- Implementation
+## Part 1: - Implementation
+
 There are three steps to this approach.
 Visual Vocabulary
 Use Speeded up robust features (SURF) to find a feature descriptor followed by K-means to obtain a visual
