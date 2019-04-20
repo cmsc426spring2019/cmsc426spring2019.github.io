@@ -90,12 +90,13 @@ Your submission on Canvas must be a zip file, following the naming convention Yo
 example, xyz123_hw3.zip. The file must have the following directory structure, based on the starter files
 - mysvm.m
 - report.pdf
-Report
+
+
+### Report
+
 Please include the plot and confusion matrix as mentioned in part 2. Also include your observations about the
 prediction of test image.
 As usual, your report must be full English sentences,not commented code
-
-### Report
 
 <a name='coll'></a>
 ## Collaboration Policy
