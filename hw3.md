@@ -10,8 +10,8 @@ permalink: /2019/hw/hw3/
 Table of Contents:
 - [Due Date](#due)
 - [Introduction](#intro)
-- [Part 1: XXXXX](#part1)
-- [Part 2: XXXXX](#part2)
+- [Part 1: Implementation](#part1)
+- [Part 2: What to submit](#part2)
 - [Submission Guidelines](#sub)
 - [Collaboration Policy](#coll)
 
