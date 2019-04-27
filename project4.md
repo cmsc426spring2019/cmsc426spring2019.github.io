@@ -25,7 +25,7 @@ In this project you will implement a convolutional neural network (CNN). You wil
 Supervised classification is a computer vision task of categorizing unlabeled images to different categories or classes. This follows the training using labeled images of the same categories. You will be provided with a data set of images of MNIST digits. All of these images will be specifically labeled as a specific digit. You would use these labeled images as training data set to train a convolutional neural network. Once the CNN is trained you would test an unlabeled image and classify it as one of the ten digits. This task can be visualized in Figure 1.
 
 <div class="fig fighighlight">
-  <img src="/assets/hwk3/mnist.png" width="100%">
+  <img src="/assets/hwk4/mnist.png" width="100%">
   <div class="figcaption">
   </div>
   <div style="clear:both;"></div>
