@@ -32,7 +32,7 @@ Supervised classification is a computer vision task of categorizing unlabeled im
 </div>
 
 ## Architecture
-Your training and test step would contain the pipeline show in Figure 2
+Your training and test step would contain the pipeline shown in Figure 2
 
 <div class="fig fighighlight">
   <img src="/assets/proj4/architecture.png" width="100%">
@@ -40,7 +40,20 @@ Your training and test step would contain the pipeline show in Figure 2
   </div>
   <div style="clear:both;"></div>
 </div>
+You are provided a framework for a single convolution layer (convolution + subsampling), a fully connected neural network with Sigmoid activation function, and a cross-entropy softmax layer with ten outputs.  Next few sections present a description of each of these components of this network. 
 
+## Fully Connected Layer
+In a fully connected layer each neuron is connected to every neuron of the previous layer as shown in Figure 3
+<div class="fig fighighlight">
+  <img src="/assets/proj4/fullyconnected.jpg" width="40%">
+  <div class="figcaption">
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+Each of these arrows (inputs) between the layers is associated with a weight. All these input weights can be represent by a 2-dimensional weight matrix, <b>W</b>. If the number of neurons in this layer is n<sub>c</sub> and the number of neurons in the previous layer is n<sub>p</sub>, then the dimensionality of the weight matrix <b>W</b> will be n<sub>c</sub> x n<sub>p</sub>. There is also a bias associated with each layer. For the current layer we will represent it by a vector, \textbf{b},  with a size of n<sub>c</sub> x 1. Therefore, for a given input, <b>X</b>, the output, <b>Z</b>, of a fully connected layer is given by the equation:
+
+Z = WX + b
 
 <a name='system_overview'></a>
 ## Implementation Overview
