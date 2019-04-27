@@ -31,6 +31,17 @@ Supervised classification is a computer vision task of categorizing unlabeled im
   <div style="clear:both;"></div>
 </div>
 
+## Architecture
+Your training and test step would contain the pipeline show in Figure 2
+
+<div class="fig fighighlight">
+  <img src="/assets/proj4/architecture.png" width="100%">
+  <div class="figcaption">
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+
 <a name='system_overview'></a>
 ## Implementation Overview
 
