@@ -55,7 +55,16 @@ Each of these arrows (inputs) between the layers is associated with a weight. Al
 
 Z = WX + b
 
+## Convolutional layer
+We will begin with a brief description of cross-correlation and convolution which are fundamental to a convolutional layer. Cross-correlation is a similarity measure between two signals when one has a time lag, represented in the continuous domain as
+
 <img src="/assets/proj4/crossCorrEq.jpg" width="40%">
+
+Convolution is similar, although one signal is reversed
+
+<img src="/assets/proj4/conv.jpg" width="40%">
+
+
 <a name='system_overview'></a>
 ## Implementation Overview
 
