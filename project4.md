@@ -188,7 +188,7 @@ However, make sure you change the index of the subsequent layers since the numbe
 <b> We will deduct points if your submission does not comply with the following guidelines.</b><br>
 You're supposed to submit the following:<br>
 <ul>
-  <li> All the files that contain your code: cnnConvolve.m, cnnPool.m, config.m </li>
+  <li> All the files that contain your code: cnnConvolve.m, cnnPool.m, config.m or any other files where you implement your code or make modifications.</li>
   <li> Accuracy for a single convolution and subsampling layer with Sigmoid activation function.</li>
   <li> Accuracy for a single convolution and subsampling layer with a ReLu activation function.</li>
   <li> Compare the results between maxpooling and average pooling.</li>
@@ -199,9 +199,7 @@ You're supposed to submit the following:<br>
 <br>
 Please submit the project <b> once </b> for your group -- there's no need for each member to submit it.
 
-### File tree and naming
 
-### Report
 
 <a name='coll'></a>
 ## Collaboration Policy
