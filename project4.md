@@ -95,6 +95,17 @@ For example, if the input matrix is of size nxn and the filter is of size fxf, t
 You probably noticed that with convolution the image gets shrunk in size. This would be a problem in a large network. However, we can retain the size of convolution output by zero-padding the image as shown in the figure below
 
 <img src="/assets/proj4/padding.jpg" width="75%">
+
+Padding helps to build deeper networks and keep more information at the border of an image. If there is an image of size nxnx1 and it is convolved with a filter of size fxfx1, in order to retain the original size, the output image would have to be of the size (n+2p-f+1) x (n+2p-f+1), where p is the zero-padding size, given by:
+
+<img src="/assets/proj4/paddingeq.jpg" width="10%">
+
+## Strides
+The number of pixels we slide between each step of the convolution of an image and a filter is called a stride. So far we have been sliding one pixel at a time and therefore the stride is 1. However, we could skip a pixel and the stride would be 2, if we skip 2 pixels the stride value will be 3, and so on and so forth. Depending on the value of the stride, the output image has the size,
+
+<img src="/assets/proj4/strideeq.jpg" width="30%">
+
+
 ### Code
 
 <a name='sub'></a>
