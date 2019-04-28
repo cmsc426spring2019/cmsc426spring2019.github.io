@@ -64,6 +64,11 @@ Convolution is similar, although one signal is reversed
 
 <img src="/assets/proj4/conv.jpg" width="25%">
 
+They have two key  features, shift invariance and linearity. Shift invariance means that the same operation is performed at every point in the image and linearity means that every pixel is replaced with a linear combination of its neighbors.
+
+In a convolutional layer an image is convolved with a filter. For example a 3 x 3 filter can be represented as
+
+<img src="/assets/proj4/filter.jpg" width="25%">
 
 <a name='system_overview'></a>
 ## Implementation Overview
