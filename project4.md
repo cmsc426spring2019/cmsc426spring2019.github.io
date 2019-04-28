@@ -84,6 +84,10 @@ Each number in this filter is referred to as a weight. The weights provided in t
 
 <a name='system_overview'></a>
 ## Implementation Overview
+Convolution involves multiplying each pixel in an image by the filter at each position, then summing them up and adding a
+bias. The figure below shows a single step of convolving an image with a filter. Each convolution will return a 2D matrix output for each input channel.
+
+<img src="/assets/proj4/convolution.jpg" width="60%">
 
 ### Code
 
