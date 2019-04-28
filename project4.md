@@ -112,6 +112,13 @@ The pooling layer shrinks the size of the input image. Reduction in size reduces
 
 <img src="/assets/proj4/maxpooling-2.jpg" width="60%">
 
+Maxpooling is similar to convolution, except, instead of convolving with a filter, we get the max value in each kernel. In this example, we use a max of f x f kernels of the image, with a padding of 0 and a stride of 1.
+
+Similarly, average pooling takes the average of each kernel as shown in teh figure below:
+
+<img src="/assets/proj4/averagepooling.png" width="40%">
+
+
 ### Code
 
 <a name='sub'></a>
