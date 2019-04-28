@@ -55,6 +55,7 @@ Each of these arrows (inputs) between the layers is associated with a weight. Al
 
 Z = WX + b
 
+<img src="/assets/proj4/crossCorrEq.jpg" width="40%">
 <a name='system_overview'></a>
 ## Implementation Overview
 
