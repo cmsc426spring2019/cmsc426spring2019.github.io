@@ -105,6 +105,12 @@ The number of pixels we slide between each step of the convolution of an image a
 
 <img src="/assets/proj4/strideeq.jpg" width="30%">
 
+where the input image size is n x n, zero-padded with p columns and rows, with a stride, s, and convolved with a filter of size, f x f.
+
+## Pooling layer
+The pooling layer shrinks the size of the input image. Reduction in size reduces the computation. Max-pooling layer is demostrated by an example in the below figure
+
+<img src="/assets/proj4/maxpooling-2.jpg" width="60%">
 
 ### Code
 
