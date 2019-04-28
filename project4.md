@@ -62,7 +62,7 @@ We will begin with a brief description of cross-correlation and convolution whic
 
 Convolution is similar, although one signal is reversed
 
-<img src="/assets/proj4/conv.jpg" width="30%">
+<img src="/assets/proj4/conv.jpg" width="25%">
 
 
 <a name='system_overview'></a>
