@@ -1,7 +1,7 @@
 ---
 layout: page
 mathjax: true
-title: Deep Learning
+title: Image Classification Using Convolutional Neural Networks
 permalink: /2019/proj/p4/
 ---
 
