@@ -150,10 +150,53 @@ Some of the code is already implemented for you. The details of the starter file
 </ul>
 All of these and other starter code files can be accessed from the following link: <a href="https://drive.google.com/drive/folders/1bIbK2fin-6Qnz0Jb_BCxNci1u4kb1umc">https://drive.google.com/drive/folders/1bIbK2fin-6Qnz0Jb_BCxNci1u4kb1umc</a>
 
+## What to Implement
+
+You're supposed to implement the following:
+<ul>
+  <li> Forward Pass<br>
+    Forward pass algorithm to train your Convolution Neural Network. This will work in conjunction with the backpropagation algorithm  that is provided to you. You will be implementing this algorithm in <b>cnnConvolve.m</b> file.
+  </li>
+  <li> Subsampling<br>
+    After convolution layer, subsample the output by implementing the following two layers in cnnPool.m :
+   <ul>
+     <li>maxpool</li>
+     <li>averagepool</li>
+   </ul>   
+ </li>
+ <li> Configuration<br>
+    Although you wont't need to change either the fully connected layer or the softmax layer
+you would require more than one convolution and the subsampling layer. In order to add new layers you would have to modify config.m file. The new layers would have to go after the following lines in the file:<br>
+   cnnConfig.layer{2}.type = 'conv';<br>
+cnnConfig.layer{2}.filterDim = [9 9];<br>
+cnnConfig.layer{2}.numFilters = 20;<br>
+cnnConfig.layer{2}.nonLinearType = 'sigmoid';<br>
+cnnConfig.layer{2}.conMatrix = ones(1,20);<br>
+cnnConfig.layer{3}.type = 'pool';<br>
+cnnConfig.layer{3}.poolDim = [2 2];<br>
+cnnConfig.layer{3}.poolType = 'maxpool';
+
+<br>
+<br>
+However, make sure you change the index of the subsequent layers since the numbers are sequential.
+  </li>
+ </ul>
+    
+
 <a name='sub'></a>
 ## Submission Guidelines
-<b> We will deduct points if your submission does not comply with the following guidelines.</b>
-
+<b> We will deduct points if your submission does not comply with the following guidelines.</b><br>
+You're supposed to submit the following:<br>
+<ul>
+  <li> All the files that contain your code: cnnConvolve.m, cnnPool.m, config.m </li>
+  <li> Accuracy for a single convolution and subsampling layer with Sigmoid activation function.</li>
+  <li> Accuracy for a single convolution and subsampling layer with a ReLu activation function.</li>
+  <li> Compare the results between maxpooling and average pooling.</li>
+  <li> Try with more than one convolution and subsampling layers for both sigmoid and ReLu activation functions. </li>
+  <li> Submit a confusion matrix and the accuracy for the best configuration. </li>
+  <li> Dimensions of the Input and output of each layer (convolution(s), maxpool(s) / average pool(s), fully connected layer, and softmax layer) for your best config.</li>
+</ul>
+<br>
 Please submit the project <b> once </b> for your group -- there's no need for each member to submit it.
 
 ### File tree and naming
