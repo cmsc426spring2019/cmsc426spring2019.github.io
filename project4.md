@@ -72,9 +72,11 @@ In a convolutional layer an image is convolved with a filter. For example a 3 x 
 
 Each number in this filter is referred to as a weight. The weights provided in this filter are example weights. Our goal is to learn the exact weights from the data during convolution. For each convolution layer a set of filters is learned. Use of convolution layer has many features but two stand out:
 <ul
-<li>In a fully connected neural network the number of parameters is much larger than a convolution network. Consider an image of size $5 \times 5$ to be convolved with a filter of size, $3 \times 3$. The number of weights we would have to learn would be the total number of weights in the filter, which is, 9. On the contrary for the same image, using a fully connected layer would require us to learn 225 weights. This is demonstrated in Figure
+<li>In a fully connected neural network the number of parameters is much larger than a convolution network. Consider an image of size $5 \times 5$ to be convolved with a filter of size, $3 \times 3$. The number of weights we would have to learn would be the total number of weights in the filter, which is, 9. On the contrary for the same image, using a fully connected layer would require us to learn 225 weights. This is demonstrated in below Figure
   
   <img src="/assets/proj4/params.jpg" width="100%">
+  </li>
+  </ul>
 
 <a name='system_overview'></a>
 ## Implementation Overview
