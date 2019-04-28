@@ -89,6 +89,12 @@ bias. The figure below shows a single step of convolving an image with a filter.
 
 <img src="/assets/proj4/convolution.jpg" width="60%">
 
+For example, if the input matrix is of size nxn and the filter is of size fxf, then the convolution output matrix will be of the size (n-f+1)x(n-f+1). The convolution output size remains the same even when there are more than one channels. For example, if there is an RGB image of size (nxnx3) and a filter of size (3x3x3), both with three channels, the convolution output will still be (n-f+1)x(n-f+1). However, if we convolve an image with more than a single filter then we will get a convolved image for each of those filters. For example, an image of size, (nxnx3), convolved with two filters, each of size, (nxnx3), will result in an output of size, (n-f+1)x(n-f+1)x2.
+
+## Padding 
+You probably noticed that with convolution the image gets shrunk in size. This would be a problem in a large network. However, we can retain the size of convolution output by zero-padding the image as shown in the figure below
+
+<img src="/assets/proj4/padding.jpg" width="75%">
 ### Code
 
 <a name='sub'></a>
