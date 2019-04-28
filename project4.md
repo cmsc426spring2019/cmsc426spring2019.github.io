@@ -5,8 +5,6 @@ title: Deep Learning
 permalink: /2019/proj/p4/
 ---
 
-## UNDER CONSTRUCTION.
-
 Table of Contents:
 - [Deadline](#due)
 - [Introduction](#intro)
