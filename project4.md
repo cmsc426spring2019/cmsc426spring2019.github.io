@@ -51,7 +51,7 @@ In a fully connected layer each neuron is connected to every neuron of the previ
   <div style="clear:both;"></div>
 </div>
 
-Each of these arrows (inputs) between the layers is associated with a weight. All these input weights can be represent by a 2-dimensional weight matrix, <b>W</b>. If the number of neurons in this layer is n<sub>c</sub> and the number of neurons in the previous layer is n<sub>p</sub>, then the dimensionality of the weight matrix <b>W</b> will be n<sub>c</sub> x n<sub>p</sub>. There is also a bias associated with each layer. For the current layer we will represent it by a vector, \textbf{b},  with a size of n<sub>c</sub> x 1. Therefore, for a given input, <b>X</b>, the output, <b>Z</b>, of a fully connected layer is given by the equation:
+Each of these arrows (inputs) between the layers is associated with a weight. All these input weights can be represent by a 2-dimensional weight matrix, <b>W</b>. If the number of neurons in this layer is n<sub>c</sub> and the number of neurons in the previous layer is n<sub>p</sub>, then the dimensionality of the weight matrix <b>W</b> will be n<sub>c</sub> x n<sub>p</sub>. There is also a bias associated with each layer. For the current layer we will represent it by a vector, <b>b<b>,  with a size of n<sub>c</sub> x 1. Therefore, for a given input, <b>X</b>, the output, <b>Z</b>, of a fully connected layer is given by the equation:
 
 Z = WX + b
 
