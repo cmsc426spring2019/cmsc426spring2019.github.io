@@ -118,8 +118,37 @@ Similarly, average pooling takes the average of each kernel as shown in teh figu
 
 <img src="/assets/proj4/averagepooling.png" width="40%">
 
+## Activation layer
+
+In order to learn complex and non-linear features we often need a non-linear function. One of the most common non-linear functions is a rectified linear unit (ReLU), as shown in Figure below
+
+<img src="/assets/proj4/ReLU.png" width="40%">
+
+This function is applied to each output of the previous layer and is defined as,
+
+<img src="/assets/proj4/relueq.jpg" width="20%">
+
+and demonstrated in the following figure
+
+<img src="/assets/proj4/relu-conv.jpg" width="70%">
 
 ### Code
+
+Some of the code is already implemented for you. The details of the starter files that are provided to you are as follows:<br>
+<ul>
+  <li> cnnTrain.m<br>
+    This is the driver file. The data sets are loaded from this file and so are various other functions
+  </li>
+  <li>cnnCost.m <br>
+    This file contains the code for backpropagation. It is already implemented for you.
+  </li>
+  <li>config.m <br>
+    
+    It is a configuration file where the network components are specified.
+</li>
+<li> All the test code is in the test directory</li>
+</ul>
+All of these and other starter code files can be accessed from the following link: <a href="https://drive.google.com/drive/folders/1bIbK2fin-6Qnz0Jb_BCxNci1u4kb1umc">https://drive.google.com/drive/folders/1bIbK2fin-6Qnz0Jb_BCxNci1u4kb1umc</a>
 
 <a name='sub'></a>
 ## Submission Guidelines
